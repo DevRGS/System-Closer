@@ -100,32 +100,21 @@
                 <div class="form-elements">
                        <fieldset class="fieldset-block"> <!-- DADOS DO CLIENTE -->
                         <legend class="titulos">DADOS DO CLIENTE</legend>
-
-                        <div class="form-select-feedBackqualificacao">
-                            <label class="form-label" for="feedBackqualificacao">Feedback Qualificação:</label>
-                            <select class="form-inputs" name="feedBackqualificacao" id="feedBackqualificacao" style="
-                             width: 165.82px;">
-
-                                <option value="Feedback Qualificacao" class="feedBackqualificacao.form-inputs">Boa</option>
-                                <option value="Feedback Qualificacao" class="feedBackqualificacao.form-inputs">Média</option>
-                                <option value="Feedback Qualificacao" class="feedBackqualificacao.form-inputs">Ruim</option>
-                            </select>
-                        </div>
+                        <label class="form-label" data-inputname="Nome">Feedback sobre a Qualificação:</label>
+                        <input type="text" class="form-inputs" name="Feedback"><br>
 
                         <label class="form-label" data-inputname="Orçamento">Orçamento:</label>
                         <input type="text" class="form-inputs" name="Orçamento"><br>
-
-
-                        <div class="form-select-chanceDeFechamento">
+<div class="form-select-chanceDeFechamento">
     
                             <label class="form-label" for="chance-fechamento">Chance de fechamento:</label>
                             <select class="form-inputs" name="chance-fechamento" id="chance-fechamento" style="
-                             width: 165.82px;">
+    width: 165.82px;">
                                 <option value="Chance de fechamento" class="chance-fechamento.form-inputs">Alta</option>
                                 <option value="Chance de fechamento" class="chance-fechamento.form-inputs">Média</option>
                                 <option value="Chance de fechamento" class="chance-fechamento.form-inputs">Baixa</option>
                             </select>
-                        </div>
+</div>
                         
                         <label class="form-label" data-inputname="Previsão de decisão">Previsão de decisão:</label>
                         <input type="text" class="form-inputs" name="Previsão de decisão"><br>
@@ -1295,51 +1284,38 @@
 
     const fieldsets = document.querySelectorAll('fieldset');
 
-    // Pega os elementos dos selects
-const chanceFechamento = document.getElementById('chance-fechamento');
-const feedbackQualifcacao = document.getElementById('feedBackqualificacao');
+    // Pega o valor selecionado no select de "Chance de fechamento"
+    const chanceFechamento = document.getElementById('chance-fechamento');
+    const selectedChance = chanceFechamento.options[chanceFechamento.selectedIndex].text;
 
-// Itera por todos os fieldsets
-fieldsets.forEach(fieldset => {
-    let hasFilledInput = false;
-    const legend = fieldset.querySelector('.titulos');
+    fieldsets.forEach(fieldset => {
+        let hasFilledInput = false;
+        const legend = fieldset.querySelector('.titulos');
 
-    if (legend) {
-        const inputs = fieldset.querySelectorAll('input[type="text"], textarea');
-        
-        // Verifica se algum input de texto está preenchido
-        inputs.forEach(input => {
-            if (input.value) {
-                hasFilledInput = true;
-            }
-        });
-
-        // Adiciona uma linha em branco antes de transcrever, exceto para o primeiro fieldset
-        if (!isFirstFieldset) {
-            transcribedText += '\n';
-        } else {
-            isFirstFieldset = false;
-        }
-
-        // Transcrição dos inputs e selects
-        if (hasFilledInput || includeObservacoes) {
-            transcribedText += '-----' + legend.textContent.trim() + '-----\n';
-            
-            // Transcreve inputs preenchidos
+        if (legend) {
+            const inputs = fieldset.querySelectorAll('input[type="text"], textarea');
             inputs.forEach(input => {
                 if (input.value) {
-                    transcribedText += input.name + ': ' + input.value + '\n';
+                    hasFilledInput = true;
                 }
             });
 
-            // Transcreve valores dos selects
-            const selectedChance = chanceFechamento.options[chanceFechamento.selectedIndex].text;
-            const selectedFeedback = feedbackQualifcacao.options[feedbackQualifcacao.selectedIndex].text;
-            transcribedText += 'Chance de fechamento: ' + selectedChance + '\n';
-            transcribedText += 'Feedback Qualificação: ' + selectedFeedback + '\n';
-        }
-    }
-});
+            // Adiciona uma linha em branco antes de transcrever, exceto para o primeiro fieldset
+            if (!isFirstFieldset) {
+                transcribedText += '\n';
+            } else {
+                isFirstFieldset = false;
+            }
+
+            if (hasFilledInput || includeObservacoes) {
+                transcribedText += '-----' + legend.textContent.trim() + '-----\n';
+                
+                inputs.forEach(input => {
+                    if (input.value) {
+                        transcribedText += input.name + ': ' + input.value + '\n';
+                        transcribedText += 'Chance de fechamento: ' + selectedChance + '\n';
+                    }
+                });
                 
 
                 // Define includeObservacoes como true quando encontrar a linha "-----OBSERVAÇÕES-----"
@@ -1348,6 +1324,10 @@ fieldsets.forEach(fieldset => {
                 // Adiciona uma linha em branco após cada fieldset
                 transcribedText += '\n';
             }
+        }
+    });
+
+}
 
 
 
@@ -1554,7 +1534,7 @@ fieldsets.forEach(fieldset => {
 
             nomeInput.addEventListener('input', function () {
                 // Altera o título da página conforme o valor inserido no campo "Nome"
-                document.title =  'Busque a Excelência';
+                document.title = nomeInput.value || 'Busque a Excelência';
         });
 
 
