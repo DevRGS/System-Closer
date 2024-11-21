@@ -100,8 +100,16 @@
                 <div class="form-elements">
                        <fieldset class="fieldset-block"> <!-- DADOS DO CLIENTE -->
                         <legend class="titulos">DADOS DO CLIENTE</legend>
-                        <label class="form-label" data-inputname="Nome">Feedback sobre a Qualificação:</label>
-                        <input type="text" class="form-inputs" name="Feedback"><br>
+                        <div class="form-select-feedBackqualificacao">
+    
+                            <label class="form-label" for="feedBackqualificacao">Feedback Qualificação:</label>
+                            <select class="form-inputs" name="feedBackqualificacao" id="feedBackqualificacao" style="
+    width: 165.82px;">
+                                <option value="Feedback Qualificacao" class="feedBackqualificacao.form-inputs">Boa</option>
+                                <option value="Feedback Qualificacao" class="feedBackqualificacao.form-inputs">Média</option>
+                                <option value="Feedback Qualificacao" class="feedBackqualificacao.form-inputs">Ruim</option>
+                            </select>
+</div>
 
                         <label class="form-label" data-inputname="Orçamento">Orçamento:</label>
                         <input type="text" class="form-inputs" name="Orçamento"><br>
@@ -1286,7 +1294,9 @@
 
     // Pega o valor selecionado no select de "Chance de fechamento"
     const chanceFechamento = document.getElementById('chance-fechamento');
+    const feedbackQualifcacao = document.getElementById('feedBackqualificacao')
     const selectedChance = chanceFechamento.options[chanceFechamento.selectedIndex].text;
+    const selectedfeedback = feedbackQualifcacao.options[feedbackQualifcacao.selectedIndex].text;
 
     fieldsets.forEach(fieldset => {
         let hasFilledInput = false;
@@ -1314,6 +1324,7 @@
                     if (input.value) {
                         transcribedText += input.name + ': ' + input.value + '\n';
                         transcribedText += 'Chance de fechamento: ' + selectedChance + '\n';
+                        transcribedText += 'Feedback Qualificacao: ' + selectedfeedback + '\n';
                     }
                 });
                 
