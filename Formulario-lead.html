@@ -1295,41 +1295,51 @@
 
     const fieldsets = document.querySelectorAll('fieldset');
 
-    // Pega o valor selecionado no select de "Chance de fechamento"
-    const chanceFechamento = document.getElementById('chance-fechamento');
-    const feedbackQualifcacao = document.getElementById('feedBackqualificacao')
-    const selectedChance = chanceFechamento.options[chanceFechamento.selectedIndex].text;
-    const selectedfeedback = feedbackQualifcacao.options[feedbackQualifcacao.selectedIndex].text;
+    // Pega os elementos dos selects
+const chanceFechamento = document.getElementById('chance-fechamento');
+const feedbackQualifcacao = document.getElementById('feedBackqualificacao');
 
-    fieldsets.forEach(fieldset => {
-        let hasFilledInput = false;
-        const legend = fieldset.querySelector('.titulos');
+// Itera por todos os fieldsets
+fieldsets.forEach(fieldset => {
+    let hasFilledInput = false;
+    const legend = fieldset.querySelector('.titulos');
 
-        if (legend) {
-            const inputs = fieldset.querySelectorAll('input[type="text"], textarea');
+    if (legend) {
+        const inputs = fieldset.querySelectorAll('input[type="text"], textarea');
+        
+        // Verifica se algum input de texto está preenchido
+        inputs.forEach(input => {
+            if (input.value) {
+                hasFilledInput = true;
+            }
+        });
+
+        // Adiciona uma linha em branco antes de transcrever, exceto para o primeiro fieldset
+        if (!isFirstFieldset) {
+            transcribedText += '\n';
+        } else {
+            isFirstFieldset = false;
+        }
+
+        // Transcrição dos inputs e selects
+        if (hasFilledInput || includeObservacoes) {
+            transcribedText += '-----' + legend.textContent.trim() + '-----\n';
+            
+            // Transcreve inputs preenchidos
             inputs.forEach(input => {
                 if (input.value) {
-                    hasFilledInput = true;
+                    transcribedText += input.name + ': ' + input.value + '\n';
                 }
             });
 
-            // Adiciona uma linha em branco antes de transcrever, exceto para o primeiro fieldset
-            if (!isFirstFieldset) {
-                transcribedText += '\n';
-            } else {
-                isFirstFieldset = false;
-            }
-
-            if (hasFilledInput || includeObservacoes) {
-                transcribedText += '-----' + legend.textContent.trim() + '-----\n';
-                
-                inputs.forEach(input => {
-                    if (input.value) {
-                        transcribedText += input.name + ': ' + input.value + '\n';
-                        transcribedText += 'Chance de fechamento: ' + selectedChance + '\n';
-                        transcribedText += 'Feedback Qualificação: ' + selectedfeedback + '\n';
-                    }
-                });
+            // Transcreve valores dos selects
+            const selectedChance = chanceFechamento.options[chanceFechamento.selectedIndex].text;
+            const selectedFeedback = feedbackQualifcacao.options[feedbackQualifcacao.selectedIndex].text;
+            transcribedText += 'Chance de fechamento: ' + selectedChance + '\n';
+            transcribedText += 'Feedback Qualificação: ' + selectedFeedback + '\n';
+        }
+    }
+});
                 
 
                 // Define includeObservacoes como true quando encontrar a linha "-----OBSERVAÇÕES-----"
@@ -1338,10 +1348,6 @@
                 // Adiciona uma linha em branco após cada fieldset
                 transcribedText += '\n';
             }
-        }
-    });
-
-}
 
 
 
@@ -1548,7 +1554,7 @@
 
             nomeInput.addEventListener('input', function () {
                 // Altera o título da página conforme o valor inserido no campo "Nome"
-                document.title = nomeInput.value || 'Busque a Excelência';
+                document.title =  'Busque a Excelência';
         });
 
 
