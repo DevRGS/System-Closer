@@ -118,12 +118,12 @@
 
                         <div class="form-select-chanceDeFechamento">
     
-                            <label class="form-label" for="chanceFechamento">Chance de fechamento:</label>
-                            <select class="form-inputs" name="chanceFechamento" id="chanceFechamento" style="
+                            <label class="form-label" for="chance-fechamento">Chance de fechamento:</label>
+                            <select class="form-inputs" name="chance-fechamento" id="chance-fechamento" style="
                              width: 165.82px;">
-                                <option value="Chance de fechamento" class="chanceFechamento.form-chance-inputs">Alta</option>
-                                <option value="Chance de fechamento" class="chanceFechamento.form-chance-inputs">Média</option>
-                                <option value="Chance de fechamento" class="chanceFechamento.form-chance-inputs">Baixa</option>
+                                <option value="Chance de fechamento" class="chance-fechamento.form-inputs">Alta</option>
+                                <option value="Chance de fechamento" class="chance-fechamento.form-inputs">Média</option>
+                                <option value="Chance de fechamento" class="chance-fechamento.form-inputs">Baixa</option>
                             </select>
                         </div>
                         
@@ -1296,7 +1296,7 @@
     const fieldsets = document.querySelectorAll('fieldset');
 
     // Pega o valor selecionado no select de "Chance de fechamento"
-    const chanceFechamento = document.getElementById('chanceFechamento');
+    const chanceFechamento = document.getElementById('chance-fechamento');
     const feedbackQualifcacao = document.getElementById('feedBackqualificacao')
     const selectedChance = chanceFechamento.options[chanceFechamento.selectedIndex].text;
     const selectedfeedback = feedbackQualifcacao.options[feedbackQualifcacao.selectedIndex].text;
