@@ -188,6 +188,35 @@
 </body>
 
 
+<h1 class="equip-h1">Bancos Credenciados SITEF<span class="copiar-bancos-sitef" onclick="copiarbancossitef()">Copiar</span></h1>
+
+    <ul class="equip-ul">
+        <h3 class="equip-h3">Que fazem PIX</h3>
+        <li class="equip-li">Itaú Unibanco</li>
+        <li class="equip-li">Banco SICREDI</li>
+        <li class="equip-li">Banco do Brasil</li>
+        <li class="equip-li">Banco SICOOB</li>
+        <li class="equip-li">Banco Bradesco</li>
+        <li class="equip-li">Banco Santander</li>
+        <li class="equip-li">Banco VerdeCard / Quero Quero Pag</li>
+    </ul>
+
+    <ul class="equip-ul">
+        <h3 class="equip-h3">Bancos não homologados, porém com possibilidade de tentativa de configuração junto a FISERV / SITEF EXPRESS, sem garantia de funcionamento:
+        </h3>
+        <li class="equip-li">Ailos</li>
+        <li class="equip-li">Banco Original</li>
+        <li class="equip-li">Cielo</li>
+        <li class="equip-li">Efí (Gerencianet)</li>
+        <li class="equip-li">PagSeguro PagBank</li>
+        <li class="equip-li">Realize CFI</li>
+        <li class="equip-li">Senff</li>
+        <li class="equip-li">Tribanco</li>
+        <li class="equip-li">Unicred</li>
+        <li class="equip-li">Mercado Pago (utilização funcional apenas no autoatendimento com acess token ao invés de configuração PIX tradicional, sem possibilidade de uso no PDV 2.0)</li>
+    </ul>
+</body>
+
 <script>
         function copiarConteudoImpTer() {
             const texto = `MODELOS RECOMENDADOS DE *IMPRESSORAS TÉRMICAS*:
@@ -293,8 +322,9 @@ navigator.clipboard.writeText(texto)
             });
         }
 
-        function copiarConteudoSat() {
-            const texto = `*SAT* MODELOS RECOMENDADOS:
+function copiarConteudoSat() {
+
+const texto = `*SAT* MODELOS RECOMENDADOS:
 -TANCA S1000
 -ELGIN SMART
 
@@ -374,8 +404,8 @@ navigator.clipboard.writeText(texto)
             });
         }
 
-        function copiarConteudoPinpad() {
-            const texto = 
+function copiarConteudoPinpad() {
+const texto = 
 `
 *MODELOS RECOMENDADOS DE PINPADS*
 
@@ -398,4 +428,42 @@ navigator.clipboard.writeText(texto)
             alert('Erro ao copiar texto: ', err);
             });
         }
+
+
+function copiarbancossitef() {
+const texto = 
+`
+*Bancos Credenciados com SITEF, que fazem cobrança via Cartão e PIX*
+
+- Banco do Brasil
+- Banco Bradesco
+- Banco Santander
+- Banco SICOOB
+- Banco SICREDI
+- Banco VerdeCard / Quero Quero Pag
+- Itaú Unibanco
+
+
+*Bancos Credenciados com SITEF, mas que fazem cobrança apenas via Cartão*
+
+- Ailos
+- Banco Original
+- Cielo
+- Efí (Gerencianet)
+- PagSeguro PagBank
+- Realize CFI
+- Senff
+- Tribanco
+- Unicred
+`;
+
+navigator.clipboard.writeText(texto)
+.then(() => {
+            alert('Texto copiado com sucesso!');
+            })
+            .catch(err => {
+            alert('Erro ao copiar texto: ', err);
+            });
+        }
+
 </script>
