@@ -44,13 +44,13 @@
 </header>
 
 <body class="bling-body">
-    <h1 class="bling-h1">Dores Bling:</h1>
+    <h1 class="bling-h1">Dores BLING:</h1>
     <ul class="bling-ul">
         <li class="bling-li">Eles não possuem PDV (offline), por isso a integração com a ConnectPlug é algo muito interessante e importante.</li>
         <li class="bling-li">Bling emite NFC-e em alguns estados, MENOS EM SC. NFE e NFSE eles conseguem até em SC.</li>
     </ul>
     
-    <h1 class="bling-h1">Solução Cplug:</h1>
+    <h1 class="bling-h1">Solução CPLUG:</h1>
     <ul class="bling-ul">
         <li class="bling-li">Exportar produtos da Bling para a ConnectPlug. Importante lembrar que nesse processo, as categorias da CPLUG serão excluídas e substituídas pelas da Bling.</li>
         <li class="bling-li">Controle de estoque na Bling (quando a venda é realizada no PDV, há baixa no estoque da Bling). É preciso realizar uma configuração na BLING para que essa movimentação seja possível.</li>
@@ -63,27 +63,47 @@
         <li class="bling-li">Precisa do Módulo de Estoque em Grade, mas dentro da bling em variações de produtos é possivel cadastrar um SKU para cada variação, e dentro do nosso sistema é possivel apenas criar código de barras para estas variações e apenas 1 SKU para o produto pai.</li>
     </ul>
     
+
+
+
     
     <ul class="bling-ul">
-        <h2 class="bling-h2">Dados sincronizados da Bling > Cplug:</h2>
+        <h2 class="bling-h2">SINCRONIZAÇÃO DE PRODUTOS: Nesta funcionalidade a sincronização segue com ORIGEM na BLING e sendo enviado para CPLUG os seguintes dados:</h2>
 
-        <li class="bling-li">Nome de Produto</li>
+        <li class="bling-li">Nome do Produto</li>
 
         <li class="bling-li">Atributos: Se utilizado, deverá ser obrigatório a contratação do módulo de GRADE DE PRODUTOS EM AMBAS PLATAFORMAS</li>
         
         <li class="bling-li">Parâmetros Tributários: Origem, NCM e CEST, os demais parâmetros tributários não são sincronizados e devem ser preenchidos manualmente</li>
         
         <li class="bling-li">Categoria: nesta sincronização serão eliminadas as categorias existentes na CPLUG e permanecerão apenas os dados oriundos da BLING</li>
-
+        
         <li class="bling-li">Valor de Venda</li>
-
+        
         <li class="bling-li">Código de Barras</li>
     </ul>
     
     <ul class="bling-ul">
-        <h2 class="bling-h2">Dados sincronizados da CPLUG > BLING:</h2>
-        <li class="bling-li">CLIENTES - Mesmo que ele seja cadastrado no momento da venda no PDV.</li>
-        <li class="bling-li">Informações da venda (tudo que cai em Vendas > Vendas da cplug).</li>
+        <h2 class="bling-h2">SINCRONIZAÇÃO DE VENDAS: Já nesta modalidade a sincronização segue como ORIGEM as vendas originadas na CPLUG, são enviados os seguintes dados para BLING:</h2>
+
+        <li class="bling-li">Venda</li>
+
+        <li class="bling-li">Vendedor: com a ressalva que serão enviados dados de vendedores que já foram sincronizados entre BLING-CPLUG</li>
+
+        <li class="bling-li">Cliente: Se o CPF/CNPJ do cliente já existir na BLING, não será duplicado, será apenas vinculado ao cliente já existente</li>
+
+        <li class="bling-li">Método de Pagamento</li>
+
+        <li class="bling-li">Cancelamento de Vendas realizadas na CPLUG</li>
+    </ul>
+
+
+    <ul class="bling-ul">
+        <h2 class="bling-h2">SINCRONIZAÇÃO DE CADASTRO DE CLIENTES:</h2>
+
+        <li class="bling-li">Clientes cadastrados na BLING: Como a ideia da integração é possibilitar vendas em nosso PDV, os clientes de e-commerce da BLING não se fazem necessários em nosso ERP, dessa maneira nenhum cliente da BLING é sincronizado no ERP CPLUG.</li>
+
+        <li class="bling-li">Clientes cadastrados na CPLUG: Somente clientes cadastrados na CPLUG são sincronizados para BLING, se o CPF/CNPJ do cliente já existir na BLING, não será duplicado, será apenas vinculado ao cliente já existente. </li>
     </ul>
     
     
@@ -93,13 +113,14 @@
         <li class="bling-li">Métodos de pagamento - precisa definir dentro da integração bling na cplug, para definir o "De > Para" das formas de pagamento, por exemplo, na Cplug o método de pagamento é "Dinheiro", e na Bling é entendido como "Dinheiro"</li>
     </ul>
     
-
     <div class="bling-centro">
         <img src="src/img/Integração-Bling/01.png" alt="De-Para">
         
     </div>
-    
+    <ul class="bling-ul">
 
+
+        
     <ul class="bling-ul">
         <h2 class="bling-h2">Extras</h2>
         <li class="bling-li">Toda venda da CPlug, cai na bling como "Pedido de venda"</li>
@@ -109,8 +130,7 @@
         <li class="bling-li" >Por enquanto NÃO é enviada da CPLUG para BLING a informação de QUAL LOJA fez X venda.</li>
     </ul>
 
-    <ul class="bling-ul">
-        <h2 class="bling-h2">Limitações da Integração Bling</h2>
+        <h2 class="bling-h2">Limitações da Integração BLING</h2>
         <li class="bling-li">Controle de Estoque apenas na BLING: O objetivo da integração é que as vendas realizadas em nossos PONTOS DE VENDA e sejam debitadas do estoque da BLING, por esta razão o estoque não é controlado na CPLUG.</li>
 
         <li class="bling-li">Métodos de Pagamentos: Na sincronização não é realizado o vínculo entre os métodos de pagamento de ambas as plataformas, sendo assim é obrigatório realizar um DE-PARA: vincular pagamentos CPLUG para pagamentos BLING.</li>
