@@ -96,12 +96,32 @@
     <ul class="bling-ul">
         <h2 class="bling-h2">Extras</h2>
         <li class="bling-li">Toda venda da CPlug, cai na bling como "Pedido de venda"</li>
-        <li class="bling-li">Não enviamos nenhum dado fiscal para bling.</li>
+        <li class="bling-li">É enviado para BLING apenas os Parametrôs fiscais de NCM e Origem, o restante fica na CPLUG.</li>
         <li class="bling-li">Se o LEAD tiver produtos com váriações de tamanho/cor na bling, ele precisa contratar o nosso módulo de Estoque em Grade Também.</li>
         <li class="bling-li" >Cada variação de produto na bling, e entendido como um produto único</li>
         <li class="bling-li" >Por enquanto NÃO é enviada da CPLUG para BLING a informação de QUAL LOJA fez X venda.</li>
     </ul>
+
+    <ul class="bling-ul">
+        <h2 class="bling-h2">Limitações da Integração Bling</h2>
+        <li class="bling-li">Controle de Estoque apenas na BLING: O objetivo da integração é que as vendas realizadas em nossos PONTOS DE VENDA e sejam debitadas do estoque da BLING, por esta razão o estoque não é controlado na CPLUG.</li>
+
+        <li class="bling-li">Métodos de Pagamentos: Na sincronização não é realizado o vínculo entre os métodos de pagamento de ambas as plataformas, sendo assim é obrigatório realizar um DE-PARA: vincular pagamentos CPLUG para pagamentos BLING.</li>
+
+        <li class="bling-li">Venda com cliente selecionado: Não é exportado o cliente relacionado à venda, todas as vendas são geradas para "Consumidor Final Padrão".</li>
+
+        <li class="bling-li">Cancelamento de Venda: Quando é realizado o cancelamento de uma venda no ERP CPLUG, essa venda precisa ser cancelada manualmente no ERP BLING.</li>
+
+        <li class="bling-li">Parâmetros Tributários: A integração não exporta todos os parâmetros, atualmente é integrado apenas NCM e Origem Fiscal, demais parâmetros precisam ser inseridos manualmente.</li>
+
+        <li class="bling-li">Vendedor: Na integração não é exportado o cadastro de vendedores e, nas vendas com vendedor selecionado, a venda é enviada para o Bling sem o vendedor.</li>
+
+        <li class="bling-li">Imagens: As imagens do cadastro de produtos não são integradas, sendo necessário replicar manualmente a inserção de imagens descritivas.</li>
+    </ul>
 </body>
+
+
+
 
 
 
