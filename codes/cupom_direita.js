@@ -1,4 +1,3 @@
-
 (function () {
   // -------------------------------------------------------------------------
   // 1) Injetar CSS com animação suave
@@ -29,8 +28,6 @@
       padding: 10px;
       z-index: 9999;
       box-shadow: -2px 2px 5px rgba(0,0,0,0.2);
-
-      /* Começa fora da tela (translateX(110%)) + opacidade 0 */
       transform: translateX(110%);
       opacity: 0;
       transition: transform 0.4s ease, opacity 0.4s ease;
@@ -69,7 +66,6 @@
       border: 1px dashed #777;
       text-align: center;
     }
-    /* Botão "x" */
     .btn-close-cupom {
       position: absolute;
       top: 3px; right: 8px;
@@ -80,7 +76,6 @@
       cursor: pointer; font-size: 14px;
       line-height: 14px; text-align: center;
     }
-    /* Botão download PDF */
     .btn-download-cupom {
       position: absolute;
       top: 30px; right: 3px;
@@ -154,18 +149,16 @@
 }
 
 
-.span-sublinhada {
-  text-decoration:underline;
-}
-
-.span-aviso-bold {
-  font-weight:bold;
-  font-size: 15px;
-}
-
+    /* Estilos para spans */
+    .span-sublinhada {
+      text-decoration: underline;
+    }
+    .span-aviso-bold {
+      font-weight: bold;
+      font-size: 15px;
+    }
   `;
 
-  // Injeta o estilo no <head>
   const styleEl = document.createElement('style');
   styleEl.type = 'text/css';
   styleEl.appendChild(document.createTextNode(css));
@@ -176,11 +169,10 @@
   // -------------------------------------------------------------------------
   const btnTogglePainel = document.createElement('button');
   btnTogglePainel.className = 'btn-toggle-painel';
-  btnTogglePainel.textContent = '٪'; // Exemplo de ícone
-  btnTogglePainel.style.display = 'none'; // Oculto até clicar em "Editar valor c/ desconto"
+  btnTogglePainel.textContent = '٪';
+  btnTogglePainel.style.display = 'none';
   document.body.appendChild(btnTogglePainel);
 
-  // Ao clicar no botão flutuante => toggla a classe .show no painel lateral
   btnTogglePainel.addEventListener('click', () => {
     const painel = criarPainelLateral();
     painel.classList.toggle('show');
@@ -191,7 +183,7 @@
   // -------------------------------------------------------------------------
   const planContainers = document.querySelectorAll('.plan-container');
   planContainers.forEach((container) => {
-    if (container.closest('.row.applications')) return; // ignora apps
+    if (container.closest('.row.applications')) return;
 
     let planName = 'Desconhecido';
     const h2 = container.querySelector('.title-plan h2');
@@ -229,7 +221,6 @@
     if (!dataStr) return;
     try {
       cuponsData = JSON.parse(dataStr);
-      // Carrega cupons só se ainda estiverem ativos (não expirados)
       Object.keys(cuponsData).forEach((planName) => {
         let lista = cuponsData[planName];
         if (!Array.isArray(lista)) lista = [lista];
@@ -263,7 +254,6 @@
       const rand = Math.floor(Math.random() * letras.length);
       codigo += letras[rand];
     }
-    // Garante que tenha pelo menos um 'C'
     if (!codigo.includes('C')) {
       const pos = Math.floor(Math.random() * 7);
       codigo = codigo.substring(0, pos) + 'C' + codigo.substring(pos + 1);
@@ -282,13 +272,11 @@
     divCupomLateral = document.createElement('div');
     divCupomLateral.className = 'div-cupom-lateral';
 
-    // Título
     const titulo = document.createElement('h4');
     titulo.textContent = 'Cupons Ativos';
     titulo.style.marginTop = '0';
     divCupomLateral.appendChild(titulo);
 
-    // Botão "Aplicar Cupom" (chama prompts)
     const btnAplicar = document.createElement('button');
     btnAplicar.textContent = 'Aplicar Cupom';
     btnAplicar.style.display = 'block';
@@ -298,7 +286,6 @@
     });
     divCupomLateral.appendChild(btnAplicar);
 
-    // Container timers
     const timersContainer = document.createElement('div');
     timersContainer.className = 'timers-container';
     divCupomLateral.appendChild(timersContainer);
@@ -308,30 +295,21 @@
   }
 
   // -------------------------------------------------------------------------
-  // 6) Forçar abertura do painel (usado ao clicar em "Editar valor c/ desconto")
+  // 6) Forçar abertura do painel
   // -------------------------------------------------------------------------
-  (function () {
-    console.log('IIFE iniciada');
-    function exibirPainelLateral() {
-      const painel = criarPainelLateral();
-      console.log('exibirPainelLateral chamada');
-      painel.classList.add('show');
-      btnTogglePainel.style.display = 'block';
+  function exibirPainelLateral() {
+    const painel = criarPainelLateral();
+    painel.classList.add('show');
+    btnTogglePainel.style.display = 'block';
+  }
+
+  document.addEventListener('click', function(evt) {
+    if (evt.target.classList.contains('btn-editar-desconto')) {
+      console.log('Botão btn-editar-desconto clicado');
+      exibirPainelLateral();
     }
-  
-    document.querySelectorAll('.btn-editar-desconto').forEach((btn) => {
-      const oldOnClick = btn.onclick;
-      btn.onclick = function(evt) {
-        console.log('Botão btn-editar-desconto clicado');
-        if (typeof oldOnClick === 'function') {
-          oldOnClick.call(this, evt);
-        }
-        exibirPainelLateral();
-        btnTogglePainel.style.display = 'block';
-      };
-    });
-    console.log('IIFE concluída');
-  })();
+  });
+
   // -------------------------------------------------------------------------
   // 7) Aplicar Cupom (via prompt)
   // -------------------------------------------------------------------------
@@ -341,16 +319,14 @@
       return;
     }
 
-    // Solicita % de desconto
     const descStr = prompt('Qual porcentagem de desconto? (máx 40%)', '10');
-    if (!descStr) return; // se cancelou
+    if (!descStr) return;
     const desconto = parseFloat(descStr.replace(',', '.'));
     if (isNaN(desconto) || desconto <= 0 || desconto > 40) {
       alert('Desconto inválido!');
       return;
     }
 
-    // Solicita horas
     const horasStr = prompt('Por quantas horas? (máx 48)', '12');
     if (!horasStr) return;
     const horas = parseInt(horasStr, 10);
@@ -359,7 +335,6 @@
       return;
     }
 
-    // Verifica quais planos estão selecionados
     const selecionados = document.querySelectorAll(
       '.plan-container:not(.row .applications .plan-container) .check-plan:checked'
     );
@@ -368,41 +343,11 @@
       return;
     }
 
-    // Cria cupom para cada plano selecionado
     const agora = Date.now();
     const expiraEm = agora + (horas * 60 * 60 * 1000);
 
-    function mostrarAvisoLimiteCupons() {
-      // Cria o fundo embaçado
-      let blurBackground = document.querySelector('.blur-background');
-      if (!blurBackground) {
-        blurBackground = document.createElement('div');
-        blurBackground.className = 'blur-background';
-        document.body.appendChild(blurBackground);
-      }
-      blurBackground.classList.add('show');
-    
-      // Cria a div de aviso
-      let divAviso = document.querySelector('.div-aviso');
-      if (!divAviso) {
-        divAviso = document.createElement('div');
-        divAviso.className = 'div-aviso';
-        divAviso.innerHTML = `
-          <button class="btn-close-aviso">X</button>
-          <p> <span class="span-sublinhada"> LIMITE DE CUPONS ATINGIDO! </span> <br><br>Remova um dos cupons atuais ou abra um chamado para Liderança para análise de caso <br><br><span class="span-aviso-bold">(PRAZO DE 2 DIAS UTEIS)</span>.</p>
-        `;
-        document.body.appendChild(divAviso);
-    
-        // Adiciona evento para fechar ao clicar no "X"
-        divAviso.querySelector('.btn-close-aviso').addEventListener('click', () => {
-          divAviso.classList.remove('show');
-          blurBackground.classList.remove('show');
-        });
-      }
-      divAviso.classList.add('show');
-    }
     selecionados.forEach(chk => {
-      if (getTotalCupons() >= 4) return; // trava caso chegue em 4
+      if (getTotalCupons() >= 4) return;
 
       const container = chk.closest('.plan-container');
       if (!container) return;
@@ -416,7 +361,6 @@
         expiraEm
       };
 
-      // Preenche inputs no DOM (se existirem)
       const inputDesc = container.querySelector('.input-desconto');
       if (inputDesc) {
         inputDesc.value = desconto;
@@ -426,17 +370,43 @@
         inputCupom.value = codigo;
       }
 
-      // Salva no localStorage
       if (!cuponsData[planName]) {
         cuponsData[planName] = [];
       }
       cuponsData[planName].push(cupomObj);
       salvarCuponsLocalStorage();
 
-      // Mostra no painel
       exibirTimerCupom(planName, cupomObj);
       console.log(`Cupom criado no plano "${planName}": ${codigo}, desconto=${desconto}%, horas=${horas}`);
     });
+  }
+
+  // Função para mostrar o aviso de limite de cupons
+  function mostrarAvisoLimiteCupons() {
+    let blurBackground = document.querySelector('.blur-background');
+    if (!blurBackground) {
+      blurBackground = document.createElement('div');
+      blurBackground.className = 'blur-background';
+      document.body.appendChild(blurBackground);
+    }
+    blurBackground.classList.add('show');
+
+    let divAviso = document.querySelector('.div-aviso');
+    if (!divAviso) {
+      divAviso = document.createElement('div');
+      divAviso.className = 'div-aviso';
+      divAviso.innerHTML = `
+        <button class="btn-close-aviso">X</button>
+        <p><span class="span-sublinhada">Limite de cupons atingido!</span><br><br>Remova um dos cupons atuais ou abra um chamado para Liderança para análise de caso<br><br><span class="span-aviso-bold">(PRAZO DE 2 DIAS ÚTEIS)</span>.</p>
+      `;
+      document.body.appendChild(divAviso);
+
+      divAviso.querySelector('.btn-close-aviso').addEventListener('click', () => {
+        divAviso.classList.remove('show');
+        blurBackground.classList.remove('show');
+      });
+    }
+    divAviso.classList.add('show');
   }
 
   // -------------------------------------------------------------------------
@@ -452,7 +422,6 @@
     divTimer.setAttribute('data-plan-name', planName);
     divTimer.setAttribute('data-cupom-id', cupomObj.id);
 
-    // Botão "x" (excluir manualmente)
     const btnClose = document.createElement('button');
     btnClose.className = 'btn-close-cupom';
     btnClose.textContent = 'x';
@@ -461,7 +430,6 @@
     });
     divTimer.appendChild(btnClose);
 
-    // Botão Download (PDF)
     const btnDownload = document.createElement('button');
     btnDownload.className = 'btn-download-cupom';
     btnDownload.textContent = '📥';
@@ -568,6 +536,7 @@
       doc.save(`Cupom_${cupomObj.codigo}.pdf`);
     });
   }
+
   function ensureJsPDFLoaded(callback) {
     if (window.jspdf && window.jspdf.jsPDF) {
       callback();
@@ -581,27 +550,10 @@
   }
 
   // -------------------------------------------------------------------------
-  // 12) Se existir um botão "Editar valor c/ desconto", ao clicar:
-  //     => Força abrir o painel + exibe .btn-toggle-painel
-  // -------------------------------------------------------------------------
-  document.querySelectorAll('.btn-editar-desconto').forEach((btn) => {
-    const oldOnClick = btn.onclick;
-    btn.onclick = function(evt) {
-      if (typeof oldOnClick === 'function') {
-        oldOnClick.call(this, evt);
-      }
-      // Força abrir o painel e mostra o botão flutuante
-      exibirPainelLateral();
-      btnTogglePainel.style.display = 'block';
-    };
-  });
-
-  // -------------------------------------------------------------------------
-  // 13) Ao carregar => cria painel, carrega timers (painel continua oculto)
+  // 12) Inicialização
   // -------------------------------------------------------------------------
   criarPainelLateral();
   carregarCuponsLocalStorage();
 
-  console.log('Script de cupons OK. Painel lateral com animação, só aparece após clicar em "Editar valor c/ desconto" ou no botão "%".');
+  console.log('Script de cupons carregado com sucesso.');
 })();
-
