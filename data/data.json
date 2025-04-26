@@ -1,92 +1,94 @@
-[
+[ 
     {
-      "nome": "Sistema PDV Frente de caixa",
-      "descricao": "Software que agiliza as operações de fechamento de caixa, é indicado para comerciantes que buscam controle e gestão de vendas, e oferece benefícios como melhoria na experiência do cliente e eficiência operacional.",
-      "preco": "Não disponível",
-      "limitacoes": "Não disponível"
-    },
-    {
-      "nome": "Sistema ERP",
-      "descricao": "Software que resolve a falta de integração entre processos empresariais, é indicado para empresas que precisam gerenciar finanças, vendas, estoque e produção, e proporciona benefícios como otimização de recursos e melhor tomada de decisões.",
-      "preco": "Não disponível",
-      "limitacoes": "Não disponível"
-    },
-    {
-      "nome": "PDV Android",
-      "descricao": "Solução que resolve a necessidade de mobilidade nas vendas, é indicada para comerciantes que operam em diferentes locais, e oferece benefícios como cadastro rápido de vendas e controle de estoque em dispositivos Android.",
-      "preco": "Não disponível",
-      "limitacoes": "Não disponível"
-    },
-    {
-      "nome": "Sistema de Autoatendimento",
-      "descricao": "Solução que resolve a dependência de atendimento humano, é indicada para negócios que desejam autonomia para os clientes, e oferece benefícios como agilidade em pedidos e pagamentos via terminais interativos.",
-      "preco": "Não disponível",
-      "limitacoes": "Requer hardware específico, como totens ou tablets."
-    },
-    {
-      "nome": "Cardápio Digital",
-      "descricao": "Ferramenta que resolve a ineficiência de cardápios impressos, é indicada para restaurantes que buscam modernização, e oferece benefícios como personalização de pedidos e praticidade para os clientes.",
-      "preco": "Não disponível",
-      "limitacoes": "Não disponível"
-    },
-    {
-      "nome": "Mesas e Comandas",
-      "descricao": "Sistema que resolve a desorganização nos pedidos, é indicado para restaurantes e bares, e oferece benefícios como gestão eficiente de mesas e fechamento rápido de contas.",
-      "preco": "Não disponível",
-      "limitacoes": "Não disponível"
-    },
-    {
-      "nome": "Tela de pedidos (KDS)",
-      "descricao": "Sistema que resolve erros e atrasos na cozinha, é indicado para cozinhas de restaurantes, e oferece benefícios como comunicação em tempo real e otimização do fluxo de trabalho.",
-      "preco": "Não disponível",
-      "limitacoes": "Não disponível"
-    },
-    {
-      "nome": "Cardápio Digital com QR Code (Smart Menu)",
-      "descricao": "Solução que resolve a necessidade de cardápios físicos, é indicada para negócios que priorizam segurança e interatividade, e oferece benefícios como acesso rápido e personalização via dispositivos móveis.",
-      "preco": "Não disponível",
-      "limitacoes": "Não disponível"
-    },
-    {
-      "nome": "PDVs Móveis",
-      "descricao": "Solução que resolve a limitação de caixas fixos, é indicada para comerciantes que precisam de mobilidade, e oferece benefícios como flexibilidade e conveniência em transações.",
-      "preco": "Não disponível",
-      "limitacoes": "Funciona melhor com certos tipos de impressoras ou leitores de cartão."
-    },
-    {
-      "nome": "Hub Delivery",
-      "descricao": "Plataforma que resolve a complexidade de gerenciar múltiplos serviços de delivery, é indicada para restaurantes, e oferece benefícios como operação otimizada e maior presença online.",
-      "preco": "Não disponível",
-      "limitacoes": "Não disponível"
-    },
-    {
-      "nome": "Aplicativo Gestão Real Time",
-      "descricao": "Aplicativo que resolve a falta de controle instantâneo, é indicado para gestores que precisam monitorar operações, e oferece benefícios como decisões ágeis baseadas em dados.",
-      "preco": "Não disponível",
-      "limitacoes": "Não disponível"
-    },
-    {
-      "nome": "Programa de Fidelidade",
-      "descricao": "Estratégia que resolve a baixa retenção de clientes, é indicada para negócios que querem engajamento, e oferece benefícios como aumento da fidelidade e satisfação.",
-      "preco": "Não disponível",
-      "limitacoes": "Não disponível"
-    },
-    {
-      "nome": "Gestão de Franquias (BI)",
-      "descricao": "Solução que resolve a falta de análise de desempenho em franquias, é indicada para redes de franquias, e oferece benefícios como monitoramento de KPIs e otimização de processos.",
-      "preco": "Não disponível",
-      "limitacoes": "Não disponível"
-    },
-    {
-      "nome": "Facilita NFE",
-      "descricao": "Ferramenta que resolve a burocracia na gestão fiscal, é indicada para empresas que emitem notas fiscais, e oferece benefícios como automação e agilidade no envio ao contador.",
-      "preco": "Não disponível",
-      "limitacoes": "Não disponível"
-    },
-    {
-      "nome": "Integração com torneiras de Chope",
-      "descricao": "Solução que resolve o controle manual de vendas de chope, é indicada para bares e restaurantes, e oferece benefícios como registro automático e gestão de estoque em tempo real.",
-      "preco": "Não disponível",
-      "limitacoes": "Não disponível"
-    }
-  ]
+        {
+          "nome": "Sistema PDV Frente de caixa",
+          "descricao": "Software que agiliza as operações de fechamento de caixa, é indicado para comerciantes que buscam controle e gestão de vendas, e oferece benefícios como melhoria na experiência do cliente e eficiência operacional.",
+          "preco": "Não disponível",
+          "limitacoes": "Não disponível"
+        },
+        {
+          "nome": "Sistema ERP",
+          "descricao": "Software que resolve a falta de integração entre processos empresariais, é indicado para empresas que precisam gerenciar finanças, vendas, estoque e produção, e proporciona benefícios como otimização de recursos e melhor tomada de decisões.",
+          "preco": "Não disponível",
+          "limitacoes": "Não disponível"
+        },
+        {
+          "nome": "PDV Android",
+          "descricao": "Solução que resolve a necessidade de mobilidade nas vendas, é indicada para comerciantes que operam em diferentes locais, e oferece benefícios como cadastro rápido de vendas e controle de estoque em dispositivos Android.",
+          "preco": "Não disponível",
+          "limitacoes": "Não disponível"
+        },
+        {
+          "nome": "Sistema de Autoatendimento",
+          "descricao": "Solução que resolve a dependência de atendimento humano, é indicada para negócios que desejam autonomia para os clientes, e oferece benefícios como agilidade em pedidos e pagamentos via terminais interativos.",
+          "preco": "Não disponível",
+          "limitacoes": "Requer hardware específico, como totens ou tablets."
+        },
+        {
+          "nome": "Cardápio Digital",
+          "descricao": "Ferramenta que resolve a ineficiência de cardápios impressos, é indicada para restaurantes que buscam modernização, e oferece benefícios como personalização de pedidos e praticidade para os clientes.",
+          "preco": "Não disponível",
+          "limitacoes": "Não disponível"
+        },
+        {
+          "nome": "Mesas e Comandas",
+          "descricao": "Sistema que resolve a desorganização nos pedidos, é indicado para restaurantes e bares, e oferece benefícios como gestão eficiente de mesas e fechamento rápido de contas.",
+          "preco": "Não disponível",
+          "limitacoes": "Não disponível"
+        },
+        {
+          "nome": "Tela de pedidos (KDS)",
+          "descricao": "Sistema que resolve erros e atrasos na cozinha, é indicado para cozinhas de restaurantes, e oferece benefícios como comunicação em tempo real e otimização do fluxo de trabalho.",
+          "preco": "Não disponível",
+          "limitacoes": "Não disponível"
+        },
+        {
+          "nome": "Cardápio Digital com QR Code (Smart Menu)",
+          "descricao": "Solução que resolve a necessidade de cardápios físicos, é indicada para negócios que priorizam segurança e interatividade, e oferece benefícios como acesso rápido e personalização via dispositivos móveis.",
+          "preco": "Não disponível",
+          "limitacoes": "Não disponível"
+        },
+        {
+          "nome": "PDVs Móveis",
+          "descricao": "Solução que resolve a limitação de caixas fixos, é indicada para comerciantes que precisam de mobilidade, e oferece benefícios como flexibilidade e conveniência em transações.",
+          "preco": "Não disponível",
+          "limitacoes": "Funciona melhor com certos tipos de impressoras ou leitores de cartão."
+        },
+        {
+          "nome": "Hub Delivery",
+          "descricao": "Plataforma que resolve a complexidade de gerenciar múltiplos serviços de delivery, é indicada para restaurantes, e oferece benefícios como operação otimizada e maior presença online.",
+          "preco": "Não disponível",
+          "limitacoes": "Não disponível"
+        },
+        {
+          "nome": "Aplicativo Gestão Real Time",
+          "descricao": "Aplicativo que resolve a falta de controle instantâneo, é indicado para gestores que precisam monitorar operações, e oferece benefícios como decisões ágeis baseadas em dados.",
+          "preco": "Não disponível",
+          "limitacoes": "Não disponível"
+        },
+        {
+          "nome": "Programa de Fidelidade",
+          "descricao": "Estratégia que resolve a baixa retenção de clientes, é indicada para negócios que querem engajamento, e oferece benefícios como aumento da fidelidade e satisfação.",
+          "preco": "Não disponível",
+          "limitacoes": "Não disponível"
+        },
+        {
+          "nome": "Gestão de Franquias (BI)",
+          "descricao": "Solução que resolve a falta de análise de desempenho em franquias, é indicada para redes de franquias, e oferece benefícios como monitoramento de KPIs e otimização de processos.",
+          "preco": "Não disponível",
+          "limitacoes": "Não disponível"
+        },
+        {
+          "nome": "Facilita NFE",
+          "descricao": "Ferramenta que resolve a burocracia na gestão fiscal, é indicada para empresas que emitem notas fiscais, e oferece benefícios como automação e agilidade no envio ao contador.",
+          "preco": "Não disponível",
+          "limitacoes": "Não disponível"
+        },
+        {
+          "nome": "Integração com torneiras de Chope",
+          "descricao": "Solução que resolve o controle manual de vendas de chope, é indicada para bares e restaurantes, e oferece benefícios como registro automático e gestão de estoque em tempo real.",
+          "preco": "Não disponível",
+          "limitacoes": "Não disponível"
+        }
+     } 
+ ]
