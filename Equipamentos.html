@@ -52,7 +52,6 @@
             <li class="equip-li">Epson TM T-20 (REDE)</li>
             <li class="equip-li">Elgin i9 (REDE)</li>
             <li class="equip-li">Bematech MP4200TH (REDE)</li>
-            <li class="equip-li">EPSON TM T20 (CABO USB)</li>
         </ul>
     
         <h4 class="equip-h3">MODELOS NÃO RECOMENDADOS, MAS JÁ FUNCIONARAM EM ALGUM TESTE NO PASSADO (**SEM GARANTIA DE FUNCIONAMENTO**):</h4>
@@ -100,9 +99,9 @@
     
     <h1 class="equip-h1">*COMPUTADORES - REQUISITOS MINIMOS* <span class="copiar-equip-impressora" onclick="copiarConteudoPc()">Copiar</span></h1>
     <ul class="equip-ul">
-        <li class="equip-li">Windows 8 e 10.</li>
-        <li class="equip-li">Memória Ram: no mínimo 4GB</li>
-        <li class="equip-li">Espaço mínimo de HD: 250 GB.</li>
+        <li class="equip-li">Windows 10 e 11.</li>
+        <li class="equip-li">Memória Ram: no mínimo 8GB</li>
+        <li class="equip-li">Espaço mínimo de SSD: 250 GB.</li>
         <li class="equip-li">Processador mínimo: i3.</li>
     </ul>
     
@@ -180,10 +179,8 @@
 <h1 class="equip-h1">MODELOS RECOMENDADOS DE *PINPADS* <span class="copiar-equip-impressora" onclick="copiarConteudoPinpad()">Copiar</span></h1>
 
     <ul class="equip-ul">
-        <li class="equip-li">Pinpad Ingenico IPP320</li>
-        <li class="equip-li">Pinpad PPC920</li>
         <li class="equip-li">Pinpad PPC930</li>
-        <li class="equip-li">Pinpad MP15</li>
+        <li class="equip-li">Pinpad MP15 (Especificamente para Autoatendimento utilizado em Tablet)</li>
     </ul>
 
 
@@ -226,6 +223,15 @@
         <li class="equip-li">Vero</li>
         <li class="equip-li">Getnet</li>
     </ul>
+
+    <h1 class="equip-h1">*EQUIPAMENTOS HOMOLOGADOS PARA AUTOATENDIMENTO* <span class="copiar-equip-impressora" onclick="copiarConteudoAutoatendimento()">Copiar</span></h1>
+
+    <ul class="equip-ul">
+        <li class="equip-li">SK-210 (padrão) - Com impressora (para cobrança, será utilizado o Pinpad PPC930)</li>
+        <li class="equip-li">Elgin M10 PRO - Para cobrança, será utilizado o Pinpad PPC930</li>
+        <li class="equip-li">Elgin MK15 - Para cobrança, será utilizado o Pinpad PPC930</li>
+        <li class="equip-li">Tablet Samsung Galaxy Tab A Wi-Fi 2GB RAM 32GB Octa-Core Android 9 Tela de 10.1" - Para cobrança, será utilizado o Pinpad MP15</li>
+    </ul>
 </body>
 
 <script>
@@ -235,7 +241,6 @@
 - Epson TM T-20 (REDE)
 - Elgin i9 (REDE)
 - Bematech MP4200TH (REDE)
-- EPSON TM T20 (CABO USB) 
 
 MODELOS NÃO RECOMENDADOS, MAS JÁ FUNCIONARAM EM ALGUM TESTE NO PASSADO (**SEM GARANTIA DE FUNCIONAMENTO**):
 
@@ -291,9 +296,9 @@ navigator.clipboard.writeText(texto)
 
         function copiarConteudoPc() {
             const texto = `*COMPUTADORES - REQUISITOS MINIMOS*
-Windows 8 e 10.
-Memória Ram: no mínimo 4GB
-Espaço mínimo de HD: 250 GB.
+Windows 10 e 11.
+Memória Ram: no mínimo 8GB
+Espaço mínimo de SSD: 250 GB.
 Processador mínimo: i3.`;
 
 navigator.clipboard.writeText(texto)
@@ -422,15 +427,8 @@ const texto =
 `
 *MODELOS RECOMENDADOS DE PINPADS*
 
-Para Totens ou Monitor Elgin M10:
-
-- Pinpad Ingenico IPP320
-- Pinpad PPC920
 - Pinpad PPC930
-
-Para Tablets:
-
-- Pinpad MP15
+- Pinpad MP15 (Especificamente para Autoatendimento utilizado em Tablet)
 `;
 
 navigator.clipboard.writeText(texto)
@@ -488,6 +486,26 @@ Modelos Recomendados de *Monitores Touch Screen*
 - Monitor, Dell, P2424HT, Touchscreen, 24"
 - Monitor Touch Screen Multitoque 18,5 ou 23 - Lynx Wave
 
+`;
+
+navigator.clipboard.writeText(texto)
+.then(() => {
+            alert('Texto copiado com sucesso!');
+            })
+            .catch(err => {
+            alert('Erro ao copiar texto: ', err);
+            });
+        }
+
+function copiarConteudoAutoatendimento() {
+const texto = 
+`
+*EQUIPAMENTOS HOMOLOGADOS PARA AUTOATENDIMENTO*
+
+- SK-210 (padrão) - Com impressora (para cobrança, será utilizado o Pinpad PPC930)
+- Elgin M10 PRO - Para cobrança, será utilizado o Pinpad PPC930
+- Elgin MK15 - Para cobrança, será utilizado o Pinpad PPC930
+- Tablet Samsung Galaxy Tab A Wi-Fi 2GB RAM 32GB Octa-Core Android 9 Tela de 10.1" - Para cobrança, será utilizado o Pinpad MP15
 `;
 
 navigator.clipboard.writeText(texto)
