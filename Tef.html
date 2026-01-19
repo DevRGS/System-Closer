@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Busque a Excelência</title>
+    <title>Guia de Vendas: TEF ConnectPlug</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="http://www.tibiadb.com/favicon.ico" />
 
@@ -16,101 +15,143 @@
         @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Kanit&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
     </style>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'header.html', true);
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    document.getElementById('header-placeholder').innerHTML = xhr.responseText;
-                } else if (xhr.readyState == 4) {
-                    console.error('Erro ao carregar o cabeçalho: ' + xhr.statusText);
-                }
-            };
-            xhr.send();
-        });
-    
-    
-    //Salva dados escritos, mesmo após atualizar pagina
-        document.addEventListener('DOMContentLoaded', function () {
-            // Recupera os dados do armazenamento local e preenche os campos
-            function carregarDados() {
-                // Itera sobre todos os elementos de input e textarea
-                document.querySelectorAll('input, textarea').forEach(function (elemento) {
-                    // Verifica se há dados salvos no armazenamento local para este elemento
-                    if (localStorage.getItem(elemento.name)) {
-                        // Preenche o valor do elemento com os dados salvos
-                        elemento.value = localStorage.getItem(elemento.name);
-                    }
-                });
-            }
-
-            // Salva os dados dos campos no armazenamento local
-            function salvarDados() {
-                // Itera sobre todos os elementos de input e textarea
-                document.querySelectorAll('input, textarea').forEach(function (elemento) {
-                    // Salva o valor do elemento no armazenamento local
-                    localStorage.setItem(elemento.name, elemento.value);
-                });
-            }
-
-            // Adiciona um ouvinte para o evento de mudança em campos de input e textarea
-            document.querySelectorAll('input, textarea').forEach(function (elemento) {
-                elemento.addEventListener('change', salvarDados);
-            });
-
-            // Carrega os dados quando a página é carregada
-            carregarDados();
-        });
-
-
-    </script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f7f6;
+        }
+        header {
+            background-color: #004a99;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 { margin: 0; font-size: 24px; }
+        h2 { color: #004a99; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h3 { color: #2c3e50; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        .highlight {
+            background-color: #e7f3ff;
+            border-left: 5px solid #004a99;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th { background-color: #f8f9fa; }
+    </style>
+    <script src="header.js" defer></script>
 </head>
+<div id="header-placeholder"></div>
+<body>
 
-<header class="cabeça" id="form-header">
-    <div class="menu-contain">
-        <div class="menu-nav">
-        <nav class="links-menu">
-            <a href="autoatendimento.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Autoatendimento</a>
-            <a href="Integrações.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Integrações</a>
-            <a href="Facilita-NFE.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Facilita NFE</a>
-            <a href="Smart-menu.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Smart Menu</a>
-            <a href="Monitor-KDS.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Monitor
-                KDS</a>
-            <a href="Business-Inteligence.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Business Intelligence</a>
-            <a href="Programa-de-fidelidade.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Programa Fidelidade</a>
-            <a href="Real-Time.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Real-Time</a>
-            <a href="Matriz-objecao.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Matriz Objeção</a>
-            <a href="Formulario-lead.html" class="itens-menu-nav" id="formulario-head" rel="noopener noreferrer">Formulário</a>
-        </nav>
-        <nav class="links-menu">
-            <a href="Equipamentos.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Equipamentos</a>
-            <a href="Integracao-Bling.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Bling</a>
-        </nav>
-        </div>
-    </div>
+<header>
+    <h1>Manual de Vendas: TEF ConnectPlug</h1>
+    <p>Guia de Apoio ao Consultor de Vendas</p>
 </header>
 
-<h1 class="tef h1">TEF - SITEF - SMART TEF</h1>
+<section>
+    <h2>1. O que é o TEF?</h2>
+    <p>O <strong>TEF (Transferência Eletrónica de Fundos)</strong> é uma solução de pagamento que integra o sistema de automação comercial (PDV ou Autoatendimento da ConnectPlug) diretamente com as adquirentes (bancos e operadoras de cartões).</p>
+    <p>Através da integradora <strong>Fiserv (SiTef Express)</strong>, o sistema comunica o valor da venda automaticamente para o Pinpad, eliminando a necessidade de digitar valores manualmente.</p>
+</section>
 
-<h2 class="tef-h2">Transferencias Eletrônicas de Fundos (a ideia de fazer estas transferências de forma segura)</h2>
+<section>
+    <h2>2. Como Funciona</h2>
+    <ol>
+        <li><strong>Integração:</strong> O PDV ConnectPlug comunica com a integradora (Fiserv).</li>
+        <li><strong>Transação:</strong> O valor da venda é enviado automaticamente para o Pinpad.</li>
+        <li><strong>Processamento:</strong> O cliente insere/aproxima o cartão; a adquirente autoriza a transação num ambiente seguro (via VPN).</li>
+        <li><strong>Finalização:</strong> O pagamento é confirmado no sistema e o talão é emitido automaticamente.</li>
+    </ol>
+</section>
 
-Autoatendimento - Duvidas.
-- Funciona com a SITEF (é uma integradora parceira)
-- Pode trabalhar com multiadiquirentes no mesmo pinpad.
-- A SITEF tem um custo de R$ 99,90.
+<section>
+    <h2>3. Argumentos de Venda (Pitch para o Cliente)</h2>
+    <div class="highlight">
+        <strong>Segurança Total:</strong> Não há erros de digitação. O operador não consegue cobrar nem mais, nem menos do que o registado no sistema.
+    </div>
+    <ul>
+        <li><strong>Agilidade na Frente de Caixa:</strong> O processo é muito mais rápido que o das máquinas POS tradicionais, ideal para estabelecimentos com grande volume de clientes.</li>
+        <li><strong>Gestão Centralizada:</strong> Todas as vendas são conciliadas automaticamente no sistema, facilitando o fecho de caixa.</li>
+        <li><strong>Multi-adquirente & Multi-bandeira:</strong> O cliente pode usar várias adquirentes (ex: Stone para crédito, Rede para débito) no mesmo equipamento para aproveitar as melhores taxas.</li>
+        <li><strong>PIX Integrado:</strong> Gera o QR Code diretamente no ecrã do Pinpad ou do computador, com confirmação automática no PDV.</li>
+    </ul>
+</section>
 
-a SmartTEF (é da própria cplug)
-Integradora parceiras
-Vindi, Cielo - lio on, PagSeguro - P2, Vero - L300, GPOS 700, SunMi P2.
+<section>
+    <h2>4. Hardware e Requisitos Técnicos</h2>
+    <table>
+        <tr>
+            <th>Cenário</th>
+            <th>Equipamento Homologado</th>
+            <th>Conectividade</th>
+        </tr>
+        <tr>
+            <td>Windows (PDV / Totem CPU)</td>
+            <td>Pinpad Gertec PPC 930</td>
+            <td>Cabo USB</td>
+        </tr>
+        <tr>
+            <td>Android (Totem Tablet)</td>
+            <td>Pinpad Gertec MP15</td>
+            <td>Bluetooth</td>
+        </tr>
+    </table>
+    <p><strong>Nota:</strong> É necessária a instalação de uma VPN pela nossa equipa técnica para garantir a segurança da transação.</p>
+</section>
 
-**TEF ou SmartTEF não funciona Sem internet.
+<section>
+    <h2>5. Como Vender (Passo a Passo do Processo)</h2>
+    <ol>
+        <li><strong>Contratação do Módulo:</strong> O TEF é um módulo adicional pago no plano do cliente.</li>
+        <li><strong>Contrato com Adquirente:</strong> O cliente deve contratar uma adquirente homologada (Stone, Rede, Cielo, PagSeguro, Vero, etc.) e solicitar os "Dados Lógicos" (ex: Stone Code).</li>
+        <li><strong>Solicitação interna:</strong> O vendedor ou cliente envia os dados lógicos e o CNPJ ao suporte da ConnectPlug.</li>
+        <li><strong>Configuração:</strong> A ConnectPlug tem um prazo de <strong>48 horas úteis</strong> para configurar o ambiente.</li>
+        <li><strong>Instalação:</strong> Após a configuração, o suporte técnico realiza a instalação remota no cliente.</li>
+    </ol>
+</section>
 
-- TEF ou SmartTEF são multi-adiquirentes.
+<section>
+    <h2>6. Limitações e Observações Importantes</h2>
+    <ul>
+        <li><strong>Homologação de Adquirentes:</strong> Se o cliente quiser uma adquirente não homologada, o processo de homologação junto da Fiserv pode levar semanas. Recomenda-se o uso das principais do mercado.</li>
+        <li><strong>PIX no TEF:</strong> Apenas para bancos homologados pela Fiserv (ex: Itaú, Bradesco, BB, Sicredi). É necessário gerar credenciais específicas (Client ID/Secret) no banco.</li>
+        <li><strong>Pinpads:</strong> O uso de modelos não homologados não garante o funcionamento pleno das bandeiras e recursos.</li>
+    </ul>
+</section>
 
-Estando na mesma rede, a SmartTEF recebe a cobrança.
+<div class="footer">
+    <p>© 2026 ConnectPlug - Material Interno para Equipa de Vendas</p>
+</div>
 
-
-***PDV android não funciona TEF
-***Autoatendimento na Elgin M10 funciona a TEF.
+</body>
+</html>

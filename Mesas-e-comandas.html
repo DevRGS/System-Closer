@@ -1,9 +1,276 @@
-Mesas e Comandas
-- Diversas formas de fazer:
-Abrir comanda direto no pdv / app de garçom / Maquininha POS / QR code na mesa / Cardápio digital.
-- Cardápio digital o cliente paga R$29,90 por cada tablet que acessar o cardápio.
-- Smart Menu / QR Code (R$99,90) paga também mas somente UMA vez por todos que ele usar.
-- QR Code pode se usar vinculando QR Code's específicos a cada mesa ou da forma como o empreendedor achar melhor.
-- App de garçom NÃO fecha comanda. Sempre vai SOLICITAR fechamento da comanda.
-- Maquininha POS (somente VINDI nesse caso das mesas e comandas) podendo realizar o pedido, fechar a comanda e receber o pagamento. (Para receber o pagamento a POS PRECISA ser um PDV, cliente vai pagar por isso).
-- Todas as comandas ficam registradas no ERP.
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Definitivo: Mesas e Comandas ConnectPlug</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            margin: 20px auto;
+            background-color: transparent;
+        }
+
+        header {
+            background-color: #16a085; /* Verde Gastronomia */
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 28px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        section:not(:first-of-type) {
+            border-radius: 12px;
+        }
+
+        h2 { 
+            color: #16a085; 
+            border-bottom: 2px solid #e0f2f1; 
+            padding-bottom: 10px; 
+            margin-top: 0;
+            font-family: 'Kanit', sans-serif;
+            text-transform: uppercase;
+        }
+
+        h3 { 
+            color: #2c3e50; 
+            margin-top: 25px; 
+            border-left: 5px solid #16a085; 
+            padding-left: 15px;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        ul, ol { padding-left: 25px; }
+        li { margin-bottom: 12px; }
+
+        .highlight {
+            background-color: #e0f2f1;
+            border-left: 5px solid #16a085;
+            padding: 20px;
+            margin: 20px 0;
+            font-weight: bold;
+            border-radius: 0 8px 8px 0;
+            color: #0e6251;
+        }
+
+        .tag-container {
+            margin-bottom: 20px;
+        }
+
+        .status-tag {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 6px 18px;
+            border-radius: 25px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-right: 10px;
+            text-transform: uppercase;
+        }
+
+        .mobile-tag {
+            display: inline-block;
+            background: #2980b9;
+            color: white;
+            padding: 6px 18px;
+            border-radius: 25px;
+            font-size: 0.85em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+
+        table, th, td {
+            border: 1px solid #eee;
+            padding: 15px;
+            font-size: 0.9em;
+        }
+
+        th { 
+            background-color: #fcfcfc; 
+            color: #16a085; 
+            text-align: left;
+            text-transform: uppercase;
+        }
+
+        .status-box {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .status-item {
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            font-weight: bold;
+            color: white;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #888;
+            margin: 40px 0;
+            width: 100%;
+        }
+    </style>
+    <script src="header.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+    <div id="header-placeholder"></div>
+    <header>
+        <h1>Mesas e Comandas + POS Móvel</h1>
+        <p>A Solução 360º para Gestão de Salão e Pagamento Móvel</p>
+    </header>
+
+    <section>
+        <div class="tag-container">
+            <span class="status-tag">Módulo Pago: Sim</span>
+            <span class="mobile-tag">Mobilidade POS Integrada</span>
+        </div>
+
+        <h2>1. O que é o Módulo Mesas e Comandas?</h2>
+        <p>É uma ferramenta de automação para estabelecimentos que trabalham com consumo local (restaurantes, bares, padarias), permitindo gerir o fluxo de clientes através de um mapa visual de mesas ou cartões de comanda individuais.</p>
+        <p>O grande diferencial é a <strong>versatilidade</strong>: o sistema opera em desktops Windows, tablets Android e agora diretamente em <strong>Smart POS (Máquinas de Cartão Android)</strong>, permitindo que o garçom lance pedidos e receba pagamentos sem sair de perto do cliente.</p>
+    </section>
+
+    <section>
+        <h2>2. Como Funciona</h2>
+        
+        <h3>Mapa de Salão e Status</h3>
+        <p>O operador acompanha a situação das mesas por cores em tempo real:</p>
+        <div class="status-box">
+            <div class="status-item" style="background-color: #27ae60;">VERDE: Livre</div>
+            <div class="status-item" style="background-color: #c0392b;">VERMELHO: Ocupada</div>
+            <div class="status-item" style="background-color: #f1c40f; color: #333;">AMARELO: Limpeza</div>
+        </div>
+
+        <h3>A Revolução do POS Móvel</h3>
+        <p>Com a integração POS Móvel (Smart POS), o hardware da máquina de cartão torna-se o próprio terminal de atendimento:</p>
+        <ul>
+            <li><strong>Todo o Ciclo na Palma da Mão:</strong> O garçom abre a mesa, lança os produtos e, ao final, clica em "Pagamento" na própria máquina.</li>
+            <li><strong>Pagamento Integrado:</strong> O valor da conta é enviado automaticamente para a função de débito/crédito da máquina, eliminando erros de digitação e filas no caixa fixo.</li>
+            <li><strong>Emissão Fiscal:</strong> A própria POS móvel pode emitir o comprovante de pagamento e o cupom fiscal (NFC-e) após a transação.</li>
+        </ul>
+
+        <h3>Operação Tradicional (Windows/Android)</h3>
+        <ul>
+            <li><strong>Lançamentos Ágeis:</strong> Busca por categorias, nome ou bipagem de código de barras.</li>
+            <li><strong>Flexibilidade de Conta:</strong> Divisão por número de pessoas, transferências de itens entre mesas e pagamentos parciais.</li>
+            <li><strong>Créditos de Cliente:</strong> Permite que um cliente pague um valor antecipado (crédito) para ser usado por outro membro da mesa no fechamento.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>3. Argumentos de Venda</h2>
+        <div class="highlight">
+            "Elimine as filas e os erros de comunicação. Tenha o controle total do seu salão e receba pagamentos direto na mesa com total agilidade."
+        </div>
+        <ul>
+            <li><strong>Experiência VIP ao Cliente:</strong> O cliente não precisa mais se levantar e enfrentar filas; ele paga e recebe o comprovante na própria mesa.</li>
+            <li><strong>Redução de Erros e Fraudes:</strong> O valor do sistema vai direto para a máquina de cartão. O garçom não consegue cobrar valor diferente do que foi lançado.</li>
+            <li><strong>Aumento da Rotatividade:</strong> Com pagamentos mais rápidos na mesa, a liberação das mesas (status amarelo) acontece em menos tempo, permitindo atender novos clientes.</li>
+            <li><strong>Segurança com Catracas:</strong> Integração exclusiva com catracas Blantech, impedindo a saída de clientes com comandas abertas.</li>
+            <li><strong>Gestão Multicaixa:</strong> Mesmo usando várias máquinas móveis, todos os valores podem ser configurados para cair em um único fechamento de caixa central.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>4. Requisitos e Modelos Homologados</h2>
+        <table>
+            <tr>
+                <th>Plataforma</th>
+                <th>Requisitos Técnicos</th>
+            </tr>
+            <tr>
+                <td><strong>Desktop / Terminal</strong></td>
+                <td>PDV Versão 2.0 em ambiente Windows.</td>
+            </tr>
+            <tr>
+                <td><strong>Mobile (App)</strong></td>
+                <td>App "Atendimento Mesas e Comandas 2.0" (Play Store) em Smartphone ou Tablet.</td>
+            </tr>
+            <tr>
+                <td><strong>POS Móvel (Smart POS)</strong></td>
+                <td>
+                    <strong>Stone:</strong> POS P2-B ou L300<br>
+                    <strong>Cielo:</strong> Cielo Lio (v2 ou v3) e DX8000<br>
+                    <strong>Safrapay:</strong> A8 Ingênico<br>
+                    <strong>Vindi:</strong> Modelos Android Inteligentes.
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Conectividade</strong></td>
+                <td>Rede Wi-Fi estável e todos os dispositivos na mesma rede do servidor de impressão.</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>5. Limitações</h2>
+        <ul>
+            <li><strong>Restrições POS Móvel:</strong> Não gerencia pedidos de iFood/Delivery, não funciona como Monitor KDS e não realiza devoluções complexas (estornos).</li>
+            <li><strong>Limite de Mesas:</strong> Capacidade máxima de até 999 mesas cadastradas.</li>
+            <li><strong>Dependência de Rede:</strong> O POS móvel exige internet ativa (Wi-Fi ou 4G) para processar transações TEF e sincronizar com o ERP.</li>
+            <li><strong>Sincronização Android:</strong> O resgate de vouchers de prêmios (Programa de Fidelidade) é otimizado para Windows, não estando disponível na versão mobile atual.</li>
+        </ul>
+    </section>
+
+    <div class="footer">
+        <p>© 2026 ConnectPlug - Material de Treinamento Unificado para Vendas</p>
+    </div>
+</div>
+
+</body>
+</html>

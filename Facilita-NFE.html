@@ -1,114 +1,165 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facilita NFE</title>
+    <title>Guia de Vendas: Facilita NF-e ConnectPlug</title>
     <link rel="stylesheet" href="style.css">
-    
- <style>
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Sedgwick+Ave+Display&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Kanit&display=swap');      
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
-</style>
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Sedgwick+Ave+Display&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Kanit&display=swap');      
+        @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+    </style>
+    <script src="header.js" defer></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f7f6;
+        }
+        header {
+            background-color: #e67e22; /* Cor distinta para diferenciar do TEF */
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 { margin: 0; font-size: 28px; text-transform: uppercase; }
+        h2 { color: #d35400; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 0; }
+        h3 { color: #2c3e50; margin-top: 20px; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        .highlight {
+            background-color: #fff4e5;
+            border-left: 5px solid #e67e22;
+            padding: 15px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+        .price-tag {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th { background-color: #f8f9fa; color: #d35400; }
+        .footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 30px;
+            padding-bottom: 20px;
+        }
+    </style>
 </head>
+<div id="header-placeholder"></div>
+<body>
 
-
-<header class="cabeça" id="form-header">
-    <div class="menu-contain">
-        <div class="menu-nav">
-        <nav class="links-menu">
-            <a href="autoatendimento.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Autoatendimento</a>
-            <a href="Integrações.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Integrações</a>
-            <a href="Facilita-NFE.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Facilita NFE</a>
-            <a href="Smart-menu.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Smart Menu</a>
-            <a href="Monitor-KDS.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Monitor
-                KDS</a>
-            <a href="Business-Inteligence.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Business Intelligence</a>
-            <a href="Programa-de-fidelidade.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Programa Fidelidade</a>
-            <a href="Real-Time.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Real-Time</a>
-            <a href="Matriz-objecao.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Matriz Objeção</a>
-            <a href="Formulario-lead.html" class="itens-menu-nav" id="formulario-head" rel="noopener noreferrer">Formulário</a>
-        </nav>
-        <nav class="links-menu">
-            <a href="Equipamentos.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Equipamentos</a>
-            <a href="Integracao-Bling.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Bling</a>
-        </nav>
-        </div>
-    </div>
+<header>
+    <h1>Módulo Facilita NF-e</h1>
+    <p>Gestão Inteligente de Notas Fiscais Recebidas e Emitidas</p>
 </header>
 
-<body id="facilita-body">
+<section>
+    <span class="price-tag">Módulo Pago</span>
+    <h2>1. O que é o Facilita NF-e?</h2>
+    <p>É um módulo de inteligência fiscal integrado ao ERP ConnectPlug que realiza a gestão automatizada de todas as notas fiscais emitidas <strong>contra</strong> e <strong>pelo</strong> CNPJ do cliente.</p>
+    <p>O objetivo principal é eliminar o trabalho manual de buscar XMLs com fornecedores e automatizar o envio de documentos para a contabilidade.</p>
+</section>
 
-    <iframe width="100%" height="615" src="https://www.youtube.com/embed/rrn3sWHWQCc?si=RIm9mXl0Egxjh4OI"></iframe>
+<section>
+    <h2>2. Como Funciona</h2>
     
-    <h1 class="facilita-h1">FACILITA NFE</h1>
-    <h2 class="facilita-h2">Módulo pago? Sim</h2>
-    <p class="facilita-p">Objetivo deste módulo é otimizar tempo e processos relacionados a importação de XML, envio de notas para contabilidade e melhorar a visualização de notas recebidas e enviadas. Para uso deste módulo é obrigatório a contratação do módulo Nota Fiscal e que exista um CERTIFICADO DIGITAL válido inserido na conta, para algumas funções será necessário o módulo NFE de ENTRADA.</p>
+    <h3>A. Notas Recebidas (Destinadas)</h3>
+    <p>O sistema conecta-se diretamente à SEFAZ e traz todas as notas emitidas por fornecedores nos últimos 12 meses.</p>
+    <ul>
+        <li><strong>Manifesto do Destinatário:</strong> O cliente pode realizar os 4 eventos fiscais (Ciência, Confirmação, Desconhecimento ou Operação não Realizada) diretamente no ERP.</li>
+        <li><strong>Importação Automática:</strong> Permite importar o XML para o estoque sem precisar do arquivo físico ou e-mail do fornecedor.</li>
+    </ul>
 
-    <h2 class="facilita-h2">1. Pesquisa e Visualização de Status de Notas Fiscais:</h2>
-    <h3 class="facilita-h3">Caminho da tela abaixo: ERP>Financeiro>Facilita NFE</h3>
-    <div class="facilita-div-img"><img class="facilita-img" src="src/img/Facilita-NFE/facilita_nfe_status.png" alt="facilita_nfe_status"></img></div>
-    
-    <p class="facilita-p">Quando clicamos em  PESQUISAR NF-E DESTINADAS , nosso ERP se conecta com a SEFAZ do respectivo estado da conta do cliente e realiza uma pesquisa de todas notas fiscais RECEBIDAS E EMITIDAS  relacionadas ao CNPJ do cliente, no prazo retroativo de 01 ano.</p>
-    <p class="facilita-p">Será possivel filtrar notas com as seguintes especificações:</p>
-    <p class="facilita-p">Hoje: Serão exibidas apenas as notas recebidas e enviadas na data atual</p>
-    <p class="facilita-p">Mês atual: Filtro referente ao mês corrente, para exibição das notas</p>
-    <p class="facilita-p">Escolher período: Tenha a possibilidade de determinar o intervalo de sua pesquisa</p>
-    <p class="facilita-p">Na frente de cada respectivo STATUS será possivel visualizar a quantidade de notas relacionadas a cada status.</p>
-    <h2 class="facilita-h2">2. Aba Recebidos:</h2>
-    <div class="facilita-div-img"><img class="facilita-img" src="src/img/Facilita-NFE/facilita_nfe_recebidos.png" alt="facilita_nfe_recebidos"></img></div>
-    
-    <p class="facilita-p">Serão exibidas notas que foram geradas com o CNPJ do respectivo cliente, será possivel visualizar os detalhes descritivos das notas, os respectivos status de TRANSMITIDA ou CANCELADA.</p>
-    <p class="facilita-p">Em ações referente a cada nota haverão as seguintes possibilidades:</p>
-    <p class="facilita-p">Importar: Clicando nesta opção você será automaticamente direcionado ao módulo de NFE de Entrada e poderá importar a respectiva Nota.                                                 </p>
-    <p class="facilita-p">Para saber como importar uma nota de entrada, clique aqui para acessar o artigo relacionado a este assunto!.                                                                                         </p>
-    <p class="facilita-p">Para este recurso ser utilizado será obrigatório ter o módulo NFE de ENTRADA.</p>
-    <p class="facilita-p">Download do XML: Será possivel baixar o arquivo XML da respectiva Nota.</p>
-    <h2 class="facilita-h2">Manifesto da NF-E: Clicando nesta opção será possivel sinalizar a respectiva ação como mostra no print abaixo:</h2>
-    <div class="facilita-div-img"><img class="facilita-img" src="src/img/Facilita-NFE/facilita_nfe_manifesto.png" alt="facilita_nfe_manifesto"></img></div>
-    
-    <h2 class="facilita-h2">Veja um breve descritivo de cada ação de manifesto:</h2>
-    <p class="facilita-p">Ciência da Operação: Nesta ação é informado a SEFEAZ que o cliente possuí o conhecimento da operação, mas a operação ainda não foi finalizada, os produtos que constam na respectiva nota ainda não foram entregues.</p>
+    <h3>B. Notas Emitidas</h3>
+    <p>Centraliza a visão de todas as NF-e e NFC-e enviadas aos clientes.</p>
+    <ul>
+        <li><strong>Envio Automático para Contador:</strong> É possível programar um dia do mês para que o sistema dispare todos os XMLs do mês anterior para o e-mail da contabilidade automaticamente.</li>
+        <li><strong>Histórico de Envios:</strong> Painel para acompanhar quais e-mails foram disparados e se foram recebidos.</li>
+    </ul>
+</section>
 
-    <p class="facilita-p">Confirmação da Operação: Cliente ciente da operação e confirmando que os produtos já foram recebidos com sucesso.</p>
-    <p class="facilita-p">Desconhecimento da Operação: Ao informar esta ação, a SEFAZ receberá o manifesto que o cliente não tem conhecimento da emissão desta nota e não autorizou a emissão da mesma.</p>
+<section>
+    <h2>3. Argumentos de Venda (Pitch)</h2>
+    <div class="highlight">
+        "Você nunca mais vai precisar cobrar XML de fornecedor ou esquecer de enviar as notas para o seu contador no fim do mês."
+    </div>
+    <ul>
+        <li><strong>Segurança contra Fraudes:</strong> O cliente identifica imediatamente se alguém usar o CNPJ dele indevidamente para emitir "notas frias".</li>
+        <li><strong>Economia de Tempo:</strong> O fechamento do mês é automatizado. O contador recebe tudo no dia programado sem intervenção humana.</li>
+        <li><strong>Conformidade Legal:</strong> Facilita a manifestação obrigatória para setores de combustível, bebidas, cigarros e água.</li>
+        <li><strong>Gestão Centralizada:</strong> Tudo o que entra e sai de mercadoria é monitorado em uma única tela.</li>
+    </ul>
+</section>
 
-    <p class="facilita-p">Operação não realizada: Nesta ação é informado que o cliente identifica a emissão da nota, mas que houveram problemas na entrega dos produtos, as mercadorias podem ter sido devolvidas, os produtos podem ter sofrido danos durante o transporte ou há divergências nos produtos entregues, como quantidade ou descrição de alguns itens.</p>
+<section>
+    <h2>4. Requisitos e Pré-requisitos</h2>
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Necessidade</th>
+        </tr>
+        <tr>
+            <td><strong>Certificado Digital</strong></td>
+            <td>Obrigatório modelo <strong>A1</strong> instalado na conta.</td>
+        </tr>
+        <tr>
+            <td><strong>Módulo Fiscal</strong></td>
+            <td>O cliente precisa ter o módulo de Nota Fiscal ativo.</td>
+        </tr>
+        <tr>
+            <td><strong>Estoque (Opcional)</strong></td>
+            <td>Requer módulo NF-e de Entrada para importar os XMLs direto para o estoque.</td>
+        </tr>
+    </table>
+</section>
 
-    <p class="facilita-p">De acordo com cada ação selecionada e a confirmação em MANIFESTAR, o status será transmitido automaticamente para SEFAZ.</p>
-    <p class="facilita-p">Observação importante: A obrigatoriedade na execução do MANIFESTO deverá ser consultada junta a contabilidade do cliente.</p>
-    <h2 class="facilita-h2">3. Aba Emitidos:</h2>
-    <div class="facilita-div-img"><img class="facilita-img" src="src/img/Facilita-NFE/facilita_nfe_emitidas.png" alt="facilita_nfe_emitidas"></img></div>
-    
-    <p class="facilita-p">Serão exibidas notas que foram emitidas pelo CNPJ do respectivo cliente, será possivel visualizar os detalhes descritivos das notas, os respectivos status de TRANSMITIDA, PENDENTE ou CANCELADA. Em ações referente a cada nota será possivel baixar os arquivos de XML e DANFE.</p>
-    <h3 class="facilita-h3">Veja as opções de envio de Notas Emitidas:</h3>
-    <h2 class="facilita-h2">Enviar por email:</h2>
-    <div class="facilita-div-img"><img class="facilita-img" src="src/img/Facilita-NFE/facilita_nfe_envio_manual.png" alt="facilita_nfe_emitidas_envios"></img></div>
+<section>
+    <h2>5. Limitações e Cuidados Importantes</h2>
+    <ul>
+        <li><strong>Conflito de API:</strong> Se o cliente usa outro sistema de consulta de notas, deve desativá-lo para evitar bloqueios por excesso de requisições na SEFAZ.</li>
+        <li><strong>Prazo de Busca:</strong> A consulta retroativa de notas destinadas é limitada a <strong>1 ano</strong>.</li>
+        <li><strong>Manifesto:</strong> A obrigatoriedade de cada tipo de manifesto deve ser sempre consultada com o contador do cliente.</li>
+    </ul>
+</section>
 
-    
-    <p class="facilita-p">Informe o email desejado e clique em ENVIAR, para que seja gerado um link para download das notas selecionadas</p>
-    <h2 class="facilita-h2">Envios:</h2>
-    <div class="facilita-div-img"><img class="facilita-img" src="src/img/Facilita-NFE/facilita_nfe_emitidas_envios.png" alt=""></img></div>
+<div class="footer">
+    <p>© 2026 ConnectPlug - Material de Treinamento Interno</p>
+</div>
 
-    <p class="facilita-p">Consulte todos envios realizados com seus respectivos status</p>
-    <h2 class="facilita-h2">Envios automáticos:</h2>
-    <div class="facilita-div-img"><img class="facilita-img" src="src/img/Facilita-NFE/facilita_nfe_emitidas_envio_automático.png" alt="facilita_nfe_emitidas_envio_automático"></img></div>
-    
-    <p class="facilita-p">Automatize o envio especificando o dia à ser enviado e email, inserindo o email e clicando em CADASTRAR, desta maneira todo mês será realizado este envio</p>
-
-
-    <h1 class="facilita-h1">Duvidas Comuns</h1>
-    <h2 class="facilita-duvidas-h2">1. É possivel utilizar o módulo Facilita NFE sem o ambiente fiscal configurado?</h2>
-    <p class="facilita-duvidas-p">Não, é obrigatório que existam as configurações fiscais parametrizadas, incluindo um certificado digital válido.</p>
-    <h2 class="facilita-duvidas-h2">2. Nosso cliente pode enviar por email uma nota fiscal emitida diretamente do módulo Facilita NFE?</h2>
-    <p class="facilita-duvidas-p">Não, na aba emitidos, ele poderá realizar download da respectiva nota e enviar manualmente por email.</p>
-    <h2 class="facilita-duvidas-h2">3. Quais módulos são obrigatórios para a utilização deste módulo?</h2>
-    <p class="facilita-duvidas-p">Módulo Nota Fiscal e se o cliente for utilizar a importação de nota fiscal de entrada, o módulo NFE de ENTRADA será obrigatório.</p>
-    <h2 class="facilita-duvidas-h2">4. É possivel cadastrar mais de um email no ENVIO AUTOMÁTICO DE NOTAS?</h2>
-    <p class="facilita-duvidas-p">Sim, é possivel cadastrar quantos emails sejam necessários no envio automático e especificar dia do envio de cada remessa de notas.</p>
 </body>
+</html>

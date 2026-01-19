@@ -1,163 +1,250 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Equipamentos Homologados</title>
+    <title>Guia de Vendas: Coletor de Dados & Inventário ConnectPlug</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="http://www.tibiadb.com/favicon.ico" />
-
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Sedgwick+Ave+Display&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Kanit&display=swap');      
-        @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            margin: 20px auto;
+            background-color: transparent;
+        }
+
+        header {
+            background-color: #34495e; /* Cinza Metálico / Logística */
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 28px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        section:not(:first-of-type) {
+            border-radius: 12px;
+        }
+
+        h2 { 
+            color: #34495e; 
+            border-bottom: 2px solid #ebedef; 
+            padding-bottom: 10px; 
+            margin-top: 0;
+            font-family: 'Kanit', sans-serif;
+            text-transform: uppercase;
+        }
+
+        h3 { 
+            color: #2c3e50; 
+            margin-top: 25px; 
+            border-left: 5px solid #34495e; 
+            padding-left: 15px;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        ul, ol { padding-left: 25px; }
+        li { margin-bottom: 12px; }
+
+        .highlight {
+            background-color: #ebedef;
+            border-left: 5px solid #34495e;
+            padding: 20px;
+            margin: 20px 0;
+            font-weight: bold;
+            border-radius: 0 8px 8px 0;
+            color: #2c3e50;
+        }
+
+        .tag-container {
+            margin-bottom: 20px;
+        }
+
+        .free-tag {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 6px 18px;
+            border-radius: 25px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-right: 10px;
+            text-transform: uppercase;
+        }
+
+        .mobile-tag {
+            display: inline-block;
+            background: #2980b9;
+            color: white;
+            padding: 6px 18px;
+            border-radius: 25px;
+            font-size: 0.85em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+
+        table, th, td {
+            border: 1px solid #eee;
+            padding: 15px;
+        }
+
+        th { 
+            background-color: #fcfcfc; 
+            color: #34495e; 
+            text-align: left;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #888;
+            margin: 40px 0;
+            width: 100%;
+        }
     </style>
+    <script src="header.js" defer></script>
 </head>
+<body>
 
+<div class="container">
+    <div id="header-placeholder"></div>
+    <header>
+        <h1>Coletor de Dados & Inventário</h1>
+        <p>Mobilidade Android para Controle de Estoque e Recebimento de Mercadorias</p>
+    </header>
 
-<header class="cabeça" id="form-header">
-    <div class="menu-contain">
-        <div class="menu-nav">
-        <nav class="links-menu">
-            <a href="autoatendimento.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Autoatendimento</a>
-            <a href="Integrações.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Integrações</a>
-            <a href="Facilita-NFE.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Facilita NFE</a>
-            <a href="Smart-menu.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Smart Menu</a>
-            <a href="Monitor-KDS.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Monitor
-                KDS</a>
-            <a href="Business-Inteligence.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Business Intelligence</a>
-            <a href="Programa-de-fidelidade.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Programa Fidelidade</a>
-            <a href="Real-Time.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Real-Time</a>
-            <a href="Matriz-objecao.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Matriz Objeção</a>
-            <a href="Formulario-lead.html" class="itens-menu-nav" id="formulario-head" rel="noopener noreferrer">Formulário</a>
-        </nav>
-        <nav class="links-menu">
-            <a href="Equipamentos.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Equipamentos</a>
-            <a href="Integracao-Bling.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Bling</a>
-        </nav>
+    <section>
+        <div class="tag-container">
+            <span class="free-tag">Módulo Gratuito</span>
+            <span class="mobile-tag">App Android Nativo</span>
         </div>
-    </div>
-</header>
 
-<body class="coletor-body">
+        <h2>1. O que é o Coletor de Dados?</h2>
+        <p>É um aplicativo desenvolvido para smartphones Android que transforma o celular em uma ferramenta potente de logística.</p>
+        <p>Seu objetivo é permitir a <strong>conferência rápida de mercadorias</strong> recebidas fisicamente contra a nota fiscal (XML) e, em sua atualização mais recente, a realização de <strong>inventários cíclicos</strong> e totais diretamente das prateleiras, eliminando contagens manuais em papel.</p>
+    </section>
 
-    <iframe class="coletor-iframe" width="100%" height="615" src="https://drive.google.com/file/u/0/d/1fksgRDwFNLoVHRCjMpnhGgao10QSIWBG/preview" frameborder='0' allowfullscreen></iframe>
-    
-<h1>Módulo pago? Não</h1>
-
-<p class="coletor-p">A ideia principal do aplicativo é permitir a conferência rápida e precisa dos produtos que recebeu fisicamente com o que constam em nota fiscal de compra. Além de poder informar possíveis avarias com as mercadorias. A principal funcionalidade do aplicativo Coletor de Dados reside na agilidade do processo de recebimento de mercadorias. </p>
-
-<h1 class="coletor-h1">1. Conceito e Funcionalidades</h1>
-<p class="coletor-p">A principal funcionalidade do aplicativo Coletor de Dados reside na agilidade do processo de recebimento de mercadorias.</p>
-
-<p class="coletor-p">Se o respectivo cliente possuir o módulo FACILITA NFE o aplicativo COLETOR DE DADOS terá ACESSO DIRETO AOS XMLs, sem que o cliente precise importar o XML via NFE DE ENTRADA. (funcionalidade sendo desenvolvida)</p>
-<p class="coletor-p">Operadores utilizam seus smartphones para escanear códigos de barras dos produtos ou embalagens, inserir as quantidades recebidas e reportar eventuais avarias. Com a capacidade de anexar fotos e observações, o aplicativo permite uma documentação detalhada das ocorrências.</p>
-<p class="coletor-p">É importante salientar que esta solução não se comportará exatamente como o HARDWARE COLETOR DE DADOS, que gera automaticamente a entrada no estoque. O aplicativo tem como objetivo facilitar a conferência e agilizar o processo de importação de NFE no ERP. No entanto, a finalização da importação da nota terá que ocorrer pelo ERP para que a entrada no estoque seja registrada.</p>
-
-<h1 class="coletor-h1">2. Aplicativo COLETOR DE DADOS</h1>
-<p class="coletor-p">Após download e instalação via GOOGLE PLAY, será necessário realizar o primeiro acesso, conforme mostram as orientações abaixo:</p>
-
-<h2 class="coletor-h3">2.1. Login e Acesso inicial:</h2>
- 
-<h3 class="coletor-h3">Caminho da tela abaixo: APP COLETOR DE DADOS>LOGIN</h3>
-
-<img src="src/img/Coletor-de-Dados/1.png" alt="">
-
-
-<ul class="coletor-ul">
-    <li class="coletor-li">Insira os dados:</li>
-    <li class="coletor-li">Código de Login</li>
-    <li class="coletor-li">Usuário</li>
-    <li class="coletor-li">Senha</li>
-    <li class="coletor-li">Clique em LOGIN</li>
-    <li class="coletor-li">Selecione a empresa desejada, se for cenário de FRANQUIAS, selecione a loja desejada</li>
-</ul>
-
-<h2 class="coletor-h3">2.2. Configurações do Aplicativo:</h2>
-
-<h3 class="coletor-h3">Caminho da tela abaixo: APP COLETOR DE DADOS>Botão Engrenagem</h3>
+    <section>
+        <h2>2. Como Funciona</h2>
         
-<img src="src/img/Coletor-de-Dados/2.png" alt="">
+        <h3>A. Recebimento e Conferência (XML)</h3>
+        <p>O operador bipa os produtos conforme chegam no estabelecimento para validar se o que foi entregue condiz com a nota fiscal.</p>
+        <ul>
+            <li><strong>Leitura Restrita:</strong> O operador não vê quantidades nem descrições; ele deve bipar item a item para garantir que a conferência seja cega e precisa.</li>
+            <li><strong>Registro de Avarias:</strong> Caso um item chegue danificado, é possível registrar a quantidade avariada, adicionar uma observação e tirar uma <strong>foto</strong> diretamente no app, que sobe para o ERP.</li>
+        </ul>
 
-<p class="coletor-p">Modo Escuro: Alteração do padrão de cores de visualização do aplicativo</p>
-<p class="coletor-p">Leitura restrita: Configuração que é apenas refletida com base na configuração oriunda do ERP, onde o operador não irá visualizar detalhes do produto (quantidade, descrição) ele utilizará apenas a câmera do smartphone para ler os produtos e lançar/confirmar a quantidade.</p>
+        <h3>B. Módulo de Inventário (Novo)</h3>
+        <p>Permite criar e abastecer inventários do zero pelo celular.</p>
+        <ul>
+            <li><strong>Criação Autônoma:</strong> O colaborador escolhe o estoque, cria o inventário (com data e hora automática) e começa a bipar os produtos nas gôndolas.</li>
+            <li><strong>Modo Leitura Rápida:</strong> Otimiza a contagem em massa, permitindo bipagem ininterrupta sem necessidade de clicar em botões entre um item e outro.</li>
+            <li><strong>Zerar Estoque:</strong> Ao finalizar, o gestor pode optar no ERP por zerar itens não contados, garantindo que o estoque reflita apenas a realidade física coletada.</li>
+        </ul>
 
-<p class="coletor-p">Modo de Leitura Rápida: Configuração que otimiza ou simplifica a visualização da quantidade já conferida de um item. Imagem abaixo mostra um exemplo SEM A MARCAÇÃO LEITURA RÁPIDA - Perceba que na frente de cada produto NÃO É EXIBIDO a quantidade já conferida.</p>
+            </section>
 
-<img src="src/img/Coletor-de-Dados/3.png" alt="">
+    <section>
+        <h2>3. Argumentos de Venda</h2>
+        <div class="highlight">
+            "Transforme qualquer smartphone em um coletor profissional. Acabe com o estoque furado e com as planilhas manuais sem gastar nada a mais por isso."
+        </div>
+        <ul>
+            <li><strong>Custo Zero:</strong> O módulo é nativo e gratuito para clientes ConnectPlug, eliminando a necessidade de comprar hardwares coletores caros.</li>
+            <li><strong>Eliminação do Retrabalho:</strong> O que é contado no celular alimenta o ERP automaticamente. Não precisa mais digitar no computador o que foi anotado no papel.</li>
+            <li><strong>Auditoria e Segurança:</strong> O app cuida da contagem e o ERP cuida da auditoria. O gestor confere custos e quantidades antes de validar a entrada final.</li>
+            <li><strong>Mobilidade e Agilidade:</strong> Ideal para inventários parciais (ex: apenas uma prateleira ou categoria) no meio do expediente.</li>
+            <li><strong>Documentação Visual:</strong> A prova de avaria com foto protege o lojista em negociações e devoluções para fornecedores.</li>
+        </ul>
+    </section>
 
-<p class="coletor-p">A imagem abaixo mostra os produtos com a marcação LEITURA RÁPIDA MARCADA - Note que é exibido as quantidades já conferidas.</p>
+    <section>
+        <h2>4. Requisitos e Pré-requisitos</h2>
+        <table>
+            <tr>
+                <th>Requisito</th>
+                <th>Necessidade</th>
+            </tr>
+            <tr>
+                <td><strong>Dispositivo</strong></td>
+                <td>Smartphone Android (Play Store). Não disponível para iOS.</td>
+            </tr>
+            <tr>
+                <td><strong>Cadastro Prévio</strong></td>
+                <td>Produtos e Fornecedores devem estar previamente cadastrados no ERP para serem reconhecidos pelo app.</td>
+            </tr>
+            <tr>
+                <td><strong>Internet</strong></td>
+                <td>Conexão Wi-Fi ou 4G para sincronização dos dados com a nuvem.</td>
+            </tr>
+            <tr>
+                <td><strong>Conferência (NF-e)</strong></td>
+                <td>O XML deve ser importado primeiro no ERP para ficar disponível para conferência no app.</td>
+            </tr>
+        </table>
+    </section>
 
-<img src="src/img/Coletor-de-Dados/4.png" alt="">
+    <section>
+        <h2>5. Limitações Conhecidas</h2>
+        <ul>
+            <li><strong>Validação Obrigatória:</strong> Para iniciar a conferência de uma nota, é obrigatório inserir a placa do veículo de transporte.</li>
+            <li><strong>Finalização Humana:</strong> O app agiliza a contagem, mas a <strong>finalização</strong> (atualização real do saldo de estoque) deve ser feita por um responsável no ERP para garantir a auditoria.</li>
+            <li><strong>Dados de Validade:</strong> No momento, o aplicativo não permite a inserção de datas de validade durante a conferência.</li>
+            <li><strong>Hardware Específico:</strong> O sistema não é compatível com dispositivos "Coletores de Dados" dedicados (hardwares industriais), apenas smartphones Android.</li>
+        </ul>
+    </section>
 
-<p class="coletor-p">Alterar Empresa atual: Mostra a conta vinculada ao aplicativo, no cenário de franquias, será possivel mudar a conta vinculada.</p>
-<p class="coletor-p">Sincronizar configurações: Botão para forçar uma sincronização de dados entre aplicativo e ERP.</p>
-<p class="coletor-p">Realizar logout: Finaliza o acesso e habilita o aplicativo para um novo login.</p>
-
-<h1 class="coletor-h1">3. Configuração ERP</h1>
- 
-<h3 class="coletor-h3">Caminho da tela abaixo: ERP>Engrenagem>Configurações Gerais>Configurações do ERP></h3>
-
-<img src="src/img/Coletor-de-Dados/5.png" alt="">
-
-<p class="coletor-p">Conferência da NF-e de entrada restrita: Com esta marcação o operador do COLETOR DE DADOS não terá acesso a lista de produtos e descrição de produtos. A única forma de se realizar a conferência seria pela leitura ou digitação de código de barras. Como mostra a sequência de prints abaixo:</p>
-
-<img src="src/img/Coletor-de-Dados/6.png" alt="">
-
-<p class="coletor-p">Entrada parcial na NF-e de entrada: Com esta funcionalidade, o operador tem a flexibilidade de conferir parcialmente as mercadores de uma nota fiscal. Em outras palavras, ele pode iniciar o processo de conferência pelo aplicativo, registrando apenas as quantidades recebidas do fornecedor ou avarias de alguns itens, sem necessariamente concluir a conferência completa de todos os itens. As informações das conferências parciais são enviadas para a nuvem e atualizadas de forma parcial.</p>
-
-<p class="coletor-p">Posteriormente, o cliente pode retornar a essa conferência para finalizar os demais itens e, somente então, clicar em "CONCLUIR" para finalizar a conferência completa da compra. É importante ressaltar que o registro parcial é atualizado dentro da importação da nota, porém, para que as movimentações no estoque sejam registradas, a nota precisa ser completada e importada de forma integral.</p>
-
-<p class="coletor-p">Edição da quantidade de item conferido: Se marcada esta opção antes de finalizar a conferência será possivel editar itens já conferidos.</p>
-
-<p class="coletor-p">Limite de caracteres: Visando otimizar a leitura de código de barras compostos em caixas e/ou embalagens de produtos. Em alguns cenários o código de barra da caixa é composto pelo código do produto e outros códigos identificadores, neste caso a limitação dos caracteres visa especificar o número de caracteres que identificam o produto.</p>
-
-<h3 class="coletor-h3">Modo de conferência de produto:</h3>
-
-<p class="coletor-p">Quantidade na NF-e: Com esta marcação a conferência será sempre feita com base na quantidade documentada em NF-e. No cenário de embalagens com quantidades específicas do produto, o operador irá informar a quantidade de embalagem ou caixa do produto, no momento da entrada do estoque o ERP irá realizar no plano de fundo o fator de conversão, neste caso sem a necessidade do operador especificar a quantidade líquida dos produtos.</p>
-
-<p class="coletor-p">Quantidade Avulsa: Neste modelo de conferência, o lançamento da quantidade deverá ser liquido, o operador deverá manualmente realizar o fator de conversão.</p>
-
-<p class="coletor-p">Ambos: Os 02 modelos anteriores são utilizados em paralelo, como mostra o print abaixo, ele poderá lançar a quantidade documentada em nota de embalagem ou caixa e também de maneira individual uma quantidade liquida adicional.</p>
-
-<img src="src/img/Coletor-de-Dados/7.png" alt="">
-
-<p class="coletor-p">Modo de registro de avarias: Para que o operador consiga registrar avarias em produtos, se ele deslizar para direita na tela de conferência, ele terá a possibilidade de especificar quantidade de produtos com avaria, uma observação e uma foto, para documentar a avaria. Estas informações será enviadas ao ERP e será possivel visualiza-las no módulo de NFE DE ENTRADA.</p>
-
-<img src="src/img/Coletor-de-Dados/8.png" alt="">
-
-<p class="coletor-p">Quantidade na NF-e: Será possivel lançar avarias apenas pela quantidade documentada em NF-e, no cenário de embalagens com quantidades específicas do produto, o operador irá informar a quantidade de avaria relacionada a embalagem ou caixa do produto.</p>
-
-<img src="src/img/Coletor-de-Dados/9.png" alt="">
-
-<p class="coletor-p">Quantidade Avulsa: O lançamento da avaria será feito pela quantidade liquida, sem o fator de conversão.</p>
-
-<img src="src/img/Coletor-de-Dados/10.png" alt="">
-
-<p class="coletor-p">Ambos: As avarias podem ser lanças de ambos modelos, sendo especificado quantidade conforme NF-E (no cenário de embalagem ou caixa) ou no cenário líquido, informando apenas unidade.</p>
-
-<img src="src/img/Coletor-de-Dados/11.png" alt="">
-
-<h1 class="coletor-h1">4. Limitações e especificações:</h1>
-
-<p class="coletor-p">A utilização do aplicativo deverá ser em um dispositivo smartphone Android, não é possivel utilizar dispositivos/hardwares de COLETA DE DADOS.</p>
-
-<p class="coletor-p">Não há necessidade de nenhum módulo adicional (Atualização em tempo real ou outros módulos) para utilizar o aplicativo COLETOR DE DADOS.</p>
-
-<p class="coletor-p">Passo obrigatório no início do processo de conferência é inserir a placa do veículo de transporte dos produtos, como mostra o print abaixo.</p>
-
-<img src="src/img/Coletor-de-Dados/12.png" alt="">
- 
-<p class="coletor-p">No ERP é possivel apenas conferir as informações lançadas pelo aplicativo COLETOR DE DADOS, não é possível editar uma conferência já realizada.</p>
-
-<p class="coletor-p">Na utilização de clientes no modelo de franquias, haverão controles e relatórios específicos no Painel BI da respectiva franqueadora, relacionado a utilização do COLETOR DE DADOS.</p>
-
-<p class="coletor-p">É obrigatório que FORNECEDOR que consta no XML já esteja cadastrado previamente no ERP.</p>
-
-<p class="coletor-p">Todos produtos presentes no XML deverão ser cadastrados previamente no ERP, sem esse cadastro o aplicativo COLETOR DE DADOS não conseguirá ler o XML e realizar os lançamentos de conferência.</p>
+    <div class="footer">
+        <p>© 2026 ConnectPlug - Material de Apoio ao Time de Vendas</p>
+    </div>
+</div>
 
 </body>
+</html>

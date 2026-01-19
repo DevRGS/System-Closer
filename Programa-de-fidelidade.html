@@ -1,164 +1,272 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programa de Fidelidade</title>
+    <title>Guia de Vendas: Programa de Fidelidade ConnectPlug</title>
     <link rel="stylesheet" href="style.css">
-    
- <style>
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Sedgwick+Ave+Display&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Kanit&display=swap');      
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
-</style>
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            margin: 20px auto;
+            background-color: transparent;
+        }
+
+        header {
+            background-color: #2c3e50; /* Azul Marinho Profissional */
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 28px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        section:not(:first-of-type) {
+            border-radius: 12px;
+        }
+
+        h2 { 
+            color: #2c3e50; 
+            border-bottom: 2px solid #e8edf2; 
+            padding-bottom: 10px; 
+            margin-top: 0;
+            font-family: 'Kanit', sans-serif;
+            text-transform: uppercase;
+        }
+
+        h3 { 
+            color: #2c3e50; 
+            margin-top: 25px; 
+            border-left: 5px solid #f1c40f; /* Destaque em Amarelo Ouro */
+            padding-left: 15px;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        ul, ol { padding-left: 25px; }
+        li { margin-bottom: 12px; }
+
+        .highlight {
+            background-color: #fef9e7;
+            border-left: 5px solid #f1c40f;
+            padding: 20px;
+            margin: 20px 0;
+            font-weight: bold;
+            border-radius: 0 8px 8px 0;
+            color: #7d6608;
+        }
+
+        .tag-container {
+            margin-bottom: 20px;
+        }
+
+        .status-tag {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 6px 18px;
+            border-radius: 25px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-right: 10px;
+            text-transform: uppercase;
+        }
+
+        .promo-tag {
+            display: inline-block;
+            background: #2980b9;
+            color: white;
+            padding: 6px 18px;
+            border-radius: 25px;
+            font-size: 0.85em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+
+        table, th, td {
+            border: 1px solid #eee;
+            padding: 15px;
+        }
+
+        th { 
+            background-color: #fcfcfc; 
+            color: #2c3e50; 
+            text-align: left;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #888;
+            margin: 40px 0;
+            width: 100%;
+        }
+
+        .process-flow {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+    </style>
+    <script src="header.js" defer></script>
 </head>
+<body>
 
+<div class="container">
+    <div id="header-placeholder"></div>
+    <header>
+        <h1>Programa de Fidelidade</h1>
+        <p>Retenção de Clientes e Engajamento através de Pontos e Cashback</p>
+    </header>
 
-
-<header class="cabeça" id="form-header">
-    <div class="menu-contain">
-        <div class="menu-nav">
-        <nav class="links-menu">
-            <a href="autoatendimento.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Autoatendimento</a>
-            <a href="Integrações.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Integrações</a>
-            <a href="Facilita-NFE.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Facilita NFE</a>
-            <a href="Smart-menu.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Smart Menu</a>
-            <a href="Monitor-KDS.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Monitor
-                KDS</a>
-            <a href="Business-Inteligence.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Business Intelligence</a>
-            <a href="Programa-de-fidelidade.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Programa Fidelidade</a>
-            <a href="Real-Time.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Real-Time</a>
-            <a href="Matriz-objecao.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Matriz Objeção</a>
-            <a href="Formulario-lead.html" class="itens-menu-nav" id="formulario-head" rel="noopener noreferrer">Formulário</a>
-        </nav>
-        <nav class="links-menu">
-            <a href="Equipamentos.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Equipamentos</a>
-            <a href="Integracao-Bling.html" target="_self" class="itens-menu-nav" rel="noopener noreferrer">Bling</a>
-        </nav>
+    <section>
+        <div class="tag-container">
+            <span class="status-tag">Módulo Adicional: Pago</span>
+            <span class="promo-tag">Setup: R$ 1000,00</span>
         </div>
-    </div>
-</header>
 
-<iframe width="100%" height="615px" src="https://www.youtube.com/embed/eMVmWkkp2X8?si=GV33Tqr2hPMdsZTU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <h2>1. O que é?</h2>
+        <p>O <strong>Programa de Fidelidade</strong> é uma solução externa integrada ao ERP/PDV da ConnectPlug desenvolvida para fidelizar o cliente final, trazendo-o para mais perto do empreendimento através de ações de recompensa.</p>
+        <p>Através dele, o lojista transforma o consumo casual em um relacionamento contínuo, utilizando mecânicas de <strong>pontuação</strong> e <strong>cashback</strong> para incentivar novas compras.</p>
+    </section>
 
-<main id="fidelidade-main">
-    
-
-    <div id="fidelidade-abaixo">
-        <h1 class="fidelidade-h1">Oque é?</h1>
-        <p class="fidelidade-p">É um programa que possui como objetivo
-    fidelizar os clientes ao estabelecimento.</p>
-    </div>
-    
-    <div id="fidelidade-vantagens">
-        <h2 id="fidelidade-h2">Como?</h2>
+    <section>
+        <h2>2. Como Funciona</h2>
+        <p>O ciclo de fidelidade segue um fluxo lógico focado na jornada do consumidor:</p>
         
-        <div class="fidelidade-alinhamento-centro">
-            <ol class="fidelidade-lista-ol">
-                <li class="fidelidade-lista-li">Cliente consome no Estabelecimento</li>
-
-                <img id="fidelidade-img" src="src/img/Programa-de-fidelidade/flecha.png" alt="">
-                <li class="fidelidade-lista-li">Acumula Pontos</li>
-
-                <img id="fidelidade-img" src="src/img/Programa-de-fidelidade/flecha.png" alt="">
-
-                <li class="fidelidade-lista-li">Sobe de Nivel</li>
-                <img id="fidelidade-img" src="src/img/Programa-de-fidelidade/flecha.png" alt="">
-
-                <li class="fidelidade-lista-li">Ganha Cashback</li>
-                <img id="fidelidade-img" src="src/img/Programa-de-fidelidade/flecha.png" alt="">
-
-                <li class="fidelidade-lista-li">Pode trocar por Premios ou utilizar como forma de pagamento no <span id="fidelidade-destaque">PDV</span></li>
-            </ol>
+        
+        <div class="process-flow">
+            <div>Consumo no<br>Estabelecimento</div>
+            <div>➔</div>
+            <div>Acúmulo de<br>Pontos/Cashback</div>
+            <div>➔</div>
+            <div>Progressão<br>de Níveis</div>
+            <div>➔</div>
+            <div>Resgate de<br>Prêmios/Vouchers</div>
         </div>
+
+        <h3>Estrutura de Páginas</h3>
+        <p>O programa exige a configuração de três áreas distintas, operadas via subdomínios:</p>
+        <ul>
+            <li><strong>Landing Page:</strong> Página inicial de apresentação das regras, FAQ e prêmios do programa.</li>
+            <li><strong>Painel do Administrador:</strong> Onde o lojista configura layouts, cores, regras de cálculo, níveis de progressão e cadastra prêmios.</li>
+            <li><strong>Painel do Cliente:</strong> Área restrita onde o consumidor acompanha seu saldo, nível atual e realiza a troca de pontos por vouchers.</li>
+        </ul>
+
+        <h3>Operação no PDV</h3>
+        <ul>
+            <li><strong>PDV 2.0 (Windows):</strong> Cadastra clientes via CPF, gera pontos automaticamente, permite a retirada de vouchers (troca de produtos) e o uso de cashback como forma de pagamento.</li>
+            <li><strong>Totem e PDV Android:</strong> Permite o cadastro de clientes e a geração automática de pontos por venda, porém o resgate de vouchers ainda não está disponível nestas plataformas.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>3. Argumentos de Venda</h2>
+        <div class="highlight">
+            "Não venda apenas uma vez. Transforme cada venda em um convite para o cliente voltar e consumir novamente."
+        </div>
+        <ul>
+            <li><strong>Inteligência de Dados (CRM):</strong> Obtenha o cadastro completo dos seus clientes (Nome, CPF, E-mail, Gênero) e entenda o comportamento de compra da sua base.</li>
+            <li><strong>Engajamento por Níveis:</strong> Crie níveis (Bronze, Prata, Ouro) com durações específicas (ex: 90 dias) para manter o cliente engajado e motivado a subir de categoria para ganhar benefícios melhores.</li>
+            <li><strong>Flexibilidade de Cashback:</strong> Configure regras gerais ou específicas por categoria de produto (ex: bebidas pontuam diferente de pratos principais).</li>
+            <li><strong>Redução de Churn:</strong> Ao oferecer recompensas tangíveis, você dificulta a ida do seu cliente para a concorrência.</li>
+            <li><strong>Omnichannel:</strong> Funciona tanto para lojas físicas quanto para delivery, podendo unificar todas as franquias em um único programa global.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>4. Requisitos e Pré-requisitos</h2>
+                <table>
+            <tr>
+                <th>Componente</th>
+                <th>Necessidade</th>
+            </tr>
+            <tr>
+                <td><strong>Domínio Próprio</strong></td>
+                <td>O cliente deve fornecer 1 domínio (ex: meunegocio.com.br) para o apontamento dos subdomínios.</td>
+            </tr>
+            <tr>
+                <td><strong>E-mail de ADM</strong></td>
+                <td>E-mail ativo para receber o primeiro acesso ao painel de gerenciamento.</td>
+            </tr>
+            <tr>
+                <td><strong>Configuração de SKU</strong></td>
+                <td>Para trocar pontos por produtos, o código SKU no programa de fidelidade deve ser idêntico ao código SKU cadastrado no ERP.</td>
+            </tr>
+            <tr>
+                <td><strong>Identificação</strong></td>
+                <td>O uso obrigatório do CPF do cliente na venda para o vínculo da pontuação.</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>5. Limitações</h2>
+        <ul>
+            <li><strong>Plataformas de Resgate:</strong> O resgate de vouchers e troca de prêmios físicos é exclusivo para o <strong>PDV 2.0 (Windows)</strong>.</li>
+            <li><strong>Indisponibilidade Android:</strong> No momento, terminais Android e Totens não realizam o resgate de vouchers, apenas a pontuação.</li>
+            <li><strong>Troca de SKU:</strong> Se o lojista alterar o SKU do produto no ERP e esquecer de atualizar no Fidelidade, a integração do voucher falhará no PDV.</li>
+            <li><strong>Internet:</strong> Por ser uma solução em nuvem, exige conexão ativa para validar saldos e códigos de autorização em tempo real.</li>
+        </ul>
+    </section>
+
+    <div class="footer">
+        <p>© 2026 ConnectPlug - Material de Treinamento Interno</p>
     </div>
-    
+</div>
 
-    
-    <div class="fidelidade-sobre">
-    
-        <h1 class="fidelidade-h1">Como funciona?</h1>
-        <p class="fidelidade-p">Cliente precisa fornecer <span id="fidelidade-destaque">1 dominio</span> para ser implementado o programa de fidelidade.</p>
-        <p class="fidelidade-p">Exemplo: meudominio.com.br. Esse domínio será utilizado nas páginas do programa fidelidade.</p>
-        <p class="fidelidade-p">O nosso cliente terá que escolher o nome dos 3 subdomínios do fidelidade.</p>
-        <h2 class="fidelidade-h2">Exemplos:</h2>
-        <p class="fidelidade-p">painel.handbook.com.br (para usar na área administrativa)</p>
-        <p class="fidelidade-p">cliente.handbook.com.br (para usar na área do cliente)</p>
-        <p class="fidelidade-p">fidelidade.handbook.com.br (para usar na landing page do fidelidade)</p>
-
-
-
-        <ol class="fidelidade-lista-ol">
-            <li class="fidelidade-lista-li">
-                <h2 class="fidelidade-h2">Painel do Administrador</h2>
-                <p class="fidelidade-p">Nesta etapa, o administrador fará as configurações do programa. Como: Layout, cores, logo, termos de uso, políticas de privacidade,etc. <br>
-                Assim como as regras de cálculo do programa, cadastro de clientes, geração de pontos, geração e consumos, etc</p>
-            </li>
-            <li class="fidelidade-lista-li">
-                <h2 class="fidelidade-h2">Painel do Cliente</h2>
-                <p class="fidelidade-p">É nesta área que o cliente fará seu cadastro no programa de fidelidade do estabeleciemnto. <br>
-                Poderá conferir seus pontos, saldos em cashback, visualizar seu nível de progreção e acessar a loja de prêmios. <br>
-                Também poderá conhecer todos os níveis do programa e seus benefícios
-                </p>
-            </li>
-            <li class="fidelidade-lista-li">
-                <h2 class="fidelidade-h2">Ladding Page</h2>
-                <p class="fidelidade-p">Esta área é a porta de entrada do cliete para conhecer o programa de fidelidade do estabeleimento. <br>
-                Onde conhecerá os prêmios, regras de utilização, FAQ, etc. <br>
-                É personalizável pelo administrador do programa.</p>
-            </li>
-        </ol>
-    </div>
-    
-    <article>
-        <h1 class="fidelidade-h1">Na Prática</h1>
-        <div class="fidelidade-pratica">
-            <h1 class="fidelidade-h1">PDV 2.0</h1>
-            <p class="fidelidade-p">Cadastra cliente(CPF), gera pontos, retirada voucher*, uso de cashback*</p>
-        </div>
-        <div class="fidelidade-pratica">
-            <h1 class="fidelidade-h1">TOTEM e PDV ANDROID</h1>
-            <p class="fidelidade-p">Cadastra cliente e gera pontos. </p>
-        </div>
-        <p class="fidelidade-p">*Retirada VOUCHER (Produto que Ganhou) Direto no PDV</p>
-        <p class="fidelidade-p">*Pode utilizar como forma de pagamento também no estabeleciemnto</p>
-    </article>
-    
-    <aside>
-        <h1 class="fidelidade-h1">Dados que pode trazer de um Fidelidade Externo?</h1>
-        <h2 class="fidelidade-h2">Base de Clientes</h2>
-        <ol class="fidelidade-lista-ol">
-            <li class="fidelidade-lista-li">Pontos</li>
-            <li class="fidelidade-lista-li">Cashback</li>
-            <li class="fidelidade-lista-li">Endereço,CPF</li>
-        </ol>
-    
-        <h1 class="fidelidade-h1">POSSIBILIDADES</h1>
-        <ol class="fidelidade-lista-ol">
-            <li class="fidelidade-lista-li">Relatórios do programa</li>
-            <li class="fidelidade-lista-li">Criar Promoções</li>
-            <li class="fidelidade-lista-li">CMR + Fidelidade</li>
-            <li class="fidelidade-lista-li">API Aberta</li>
-            <li class="fidelidade-lista-li">Programa único para todas as franquias</li>
-        </ol>
-    </aside>
-    
-    <footer class="fidelidade-footer">
-        <h1 class="fidelidade-h1">Exemplos de clientes com Programa de Fidelidade</h1>
-        <div class="fidelidade-footer-links">
-
-
-            <ul class="fidelidade-lista-ul">
-                <li><a id="fidelidade-footer-a" href="https://fidelidade.sushiwabi.com.br/" target="_blank" rel="noreferrer">SushiWabi</a></li>
-                <li><a id="fidelidade-footer-a" href="https://fidelidade.osorvetao.com.br/" target="_blank" rel="noreferrer">O Sorvetão</a></li>
-                <li><a id="fidelidade-footer-a" href="https://www.cervejariacolorado.com.br/familia-do-urso" target="_blank" rel="noreferrer">Cervejaria Colorado</a></li>
-
-            </ul>
-        </div>
-
-    </footer>
-</main>
+</body>
+</html>

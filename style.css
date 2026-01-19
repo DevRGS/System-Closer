@@ -1,10 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    max-width: 100%;
-
-
+:root {
     --primary: #0090CE;
     --claro: #AACEDF;
     --claro-medio: #64B4D9;
@@ -21,6 +15,17 @@
     --fonte-display-2: 'Black Ops One',sans-serif;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Exceção para iframes - não aplica box-sizing que pode interferir */
+iframe {
+    box-sizing: content-box;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
@@ -35,30 +40,297 @@
 
 .cabeça {
     width: 100%;
+    min-height: 70px;
     background-color: var(--claro);
-    padding-top: 10px;
-    display: block;
-}
-
-
-
-
-.links-menu {
+    padding: 15px 20px;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: space-around;
-    padding-bottom: 10px;
-
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    gap: 15px;
+    box-sizing: border-box;
 }
 
-a {
+/* Navegação horizontal do header */
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    flex: 1;
+    min-height: 40px;
+}
+
+.header-link {
+    padding: 10px 15px;
+    min-height: 40px;
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-family: var(--fonte-p);
+    font-size: 14px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.header-link:hover {
+    background-color: var(--medio);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.header-link:active {
+    transform: translateY(0);
+}
+
+.header-link-active {
+    background-color: var(--medio-escuro) !important;
+    font-weight: 600;
+}
+
+/* Botão Menu - escondido por padrão em telas grandes */
+.menu-toggle-btn {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    min-height: 40px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: var(--fonte-h1);
+    font-size: 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+.menu-toggle-btn:hover {
+    background-color: var(--medio);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.menu-toggle-btn:active {
+    transform: translateY(0);
+}
+
+.menu-icon {
+    font-size: 24px;
+    line-height: 1;
+}
+
+.menu-text {
+    font-weight: 500;
+}
+
+/* Overlay escuro quando menu está aberto */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.menu-overlay.menu-overlay-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Menu lateral */
+.menu-sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 90%;
+    max-width: 1200px;
+    max-height: fit-content;
+    border-bottom-right-radius: 20px;
+    height: 100vh;
+    background-color: white;
+    z-index: 9999;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-sidebar.menu-open {
+    left: 0;
+}
+
+/* Header do menu */
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--medio) 100%);
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-title {
+    font-family: var(--fonte-h1);
+    font-size: 28px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.menu-close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 36px;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    line-height: 1;
+}
+
+.menu-close-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+/* Container das colunas */
+.menu-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 40px 30px;
+    flex: 1;
+}
+
+/* Coluna individual */
+.menu-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-column-title {
+    font-family: var(--fonte-h2);
+    font-size: 22px;
+    color: var(--primary);
+    margin: 0 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--primary);
+    font-weight: 600;
+}
+
+/* Lista de links */
+.menu-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu-link {
+    display: block;
+    padding: 12px 16px;
+    color: var(--escuro);
+    text-decoration: none;
+    font-family: var(--fonte-p);
+    font-size: 16px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.menu-link:hover {
+    background-color: var(--claro);
+    border-left-color: var(--primary);
+    padding-left: 20px;
+    color: var(--primary);
+}
+
+.menu-link-active {
+    background-color: var(--claro);
+    border-left-color: var(--primary);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    /* Esconde a navegação horizontal em telas pequenas */
+    .header-nav {
+        display: none;
+    }
+    
+    /* Mostra o botão de menu em telas pequenas */
+    .menu-toggle-btn {
+        display: flex;
+    }
+    
+    /* Mantém altura mínima do header em telas pequenas */
+    .cabeça {
+        min-height: 60px;
+    }
+    
+    .menu-sidebar {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .menu-columns {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 30px 20px;
+    }
+    
+    .menu-header {
+        padding: 15px 20px;
+    }
+    
+    .menu-title {
+        font-size: 24px;
+    }
+    
+    .menu-column-title {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .menu-columns {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* Estilos gerais para links (exceto menu e header) */
+a:not(.itens-menu-nav):not(.header-link):not(.menu-link) {
     text-decoration: none;
     padding: 3px 5px;
     color: var(--branco);
-    font-family: var(--fonte-h1);
     transition: all 0.5s;
-
     border: none;
     outline: none;
     background:var(--preto);
@@ -68,7 +340,7 @@ a {
     border-radius: 10px;
 }
 
-a:before {
+a:not(.itens-menu-nav):not(.header-link):not(.menu-link):before {
     content: '';
     background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
     position: absolute;
@@ -85,19 +357,19 @@ a:before {
     border-radius: 10px;
 }
 
-a:active {
+a:not(.itens-menu-nav):not(.header-link):not(.menu-link):active {
     color: #000
 }
 
-a:active:after {
+a:not(.itens-menu-nav):not(.header-link):not(.menu-link):active:after {
     background: transparent;
 }
 
-a:hover:before {
+a:not(.itens-menu-nav):not(.header-link):not(.menu-link):hover:before {
     opacity: 1;
 }
 
-a:after {
+a:not(.itens-menu-nav):not(.header-link):not(.menu-link):after {
     z-index: -1;
     content: '';
     position: absolute;
@@ -129,7 +401,7 @@ main {
     background-color:var(--claro);
 }
 
-a:hover {
+a:not(.itens-menu-nav):not(.header-link):not(.menu-link):hover {
     transform: scale(1.05);
     translate: 0px 5px;
     animation: receba 0.4s infinite alternate;
@@ -762,6 +1034,7 @@ aside{
 .smart-menu-iframe{
     padding-bottom: 30px;
     width: 100%;
+    display: block;
 }
 
 .smart-menu-h1{
@@ -2428,4 +2701,166 @@ background-color: var(--claro);
 
 .bling-centro{
     text-align: center;
+}
+
+/*COMEÇANDO STYLE MESAS E COMANDAS*/
+/*COMEÇANDO STYLE MESAS E COMANDAS*/
+/*COMEÇANDO STYLE MESAS E COMANDAS*/
+/*COMEÇANDO STYLE MESAS E COMANDAS*/
+/*COMEÇANDO STYLE MESAS E COMANDAS*/
+/*COMEÇANDO STYLE MESAS E COMANDAS*/
+/*COMEÇANDO STYLE MESAS E COMANDAS*/
+/*COMEÇANDO STYLE MESAS E COMANDAS*/
+
+.mesas-comandas-body{
+    background-color: var(--claro);
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 3%;
+}
+
+.mesas-comandas-main{
+    padding-top: 20px;
+    padding-bottom: 40px;
+    padding-right: 3%;
+    padding-left: 3%;
+}
+
+.mesas-comandas-h1{
+    font-family: var(--fonte-h1);
+    text-align: center;
+    font-size: 35px;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+
+.mesas-comandas-h2{
+    font-family: var(--fonte-h2);
+    text-align: center;
+    font-size: 22px;
+    background-color: var(--primary);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.mesas-comandas-h3{
+    font-family: var(--fonte-h2);
+    font-size: 20px;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    padding: 8px;
+    background-color: var(--primary);
+    border-radius: 8px;
+}
+
+.mesas-comandas-p{
+    font-family: var(--fonte-p);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.mesas-comandas-destaque{
+    background-color: var(--preto);
+    color: var(--branco);
+    font-family: var(--fonte-display-2);
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 20px 0;
+    display: inline-block;
+}
+
+.mesas-comandas-ul{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 30px;
+}
+
+.mesas-comandas-li{
+    font-family: var(--fonte-p);
+    font-size: 17px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    list-style: disc;
+}
+
+/* RESPONSIVIDADE GERAL */
+@media screen and (max-width: 768px) {
+    /* Ajustes gerais de texto */
+    h1 {
+        font-size: 22px !important;
+    }
+    
+    h2 {
+        font-size: 18px !important;
+    }
+    
+    /* Ajustes de padding e margin */
+    main {
+        padding-left: 2% !important;
+        padding-right: 2% !important;
+    }
+    
+    /* Ajustes de imagens */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Ajustes de iframes - respeita altura definida no HTML */
+    iframe {
+        width: 100%;
+        max-width: 100%;
+        display: block;
+        border: none;
+        position: relative;
+        z-index: 1;
+    }
+    
+    /* Garante que iframes do YouTube não sejam afetados por outras regras */
+    iframe[src*="youtube"],
+    iframe[src*="youtu.be"] {
+        pointer-events: auto;
+        user-select: auto;
+        -webkit-user-select: auto;
+        -moz-user-select: auto;
+        -ms-user-select: auto;
+    }
+    
+    /* Ajustes de tabelas */
+    table {
+        font-size: 14px;
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 20px !important;
+    }
+    
+    h2 {
+        font-size: 16px !important;
+    }
+    
+    p {
+        font-size: 14px !important;
+    }
+    
+    /* Ajustes de padding reduzidos */
+    main {
+        padding-left: 1% !important;
+        padding-right: 1% !important;
+    }
 }
