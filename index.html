@@ -3,53 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Portal de Conhecimento: ConnectPlug</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="http://www.tibiadb.com/favicon.ico" />
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Sedgwick+Ave+Display&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Kanit&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            margin: 20px auto;
+            background-color: transparent;
+        }
+
+        header {
+            background-color: #004a99; /* Azul Principal ConnectPlug */
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 48px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin: 15px 0 0;
+            font-size: 20px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 20px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        section:not(:first-of-type) {
+            border-radius: 12px;
+        }
+
+        h2 { 
+            color: #004a99; 
+            border-bottom: 2px solid #e7f3ff; 
+            padding-bottom: 10px; 
+            margin-top: 0;
+            font-family: 'Kanit', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .welcome-box {
+            text-align: center;
+            padding: 20px;
+            background-color: #e7f3ff;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            color: #004a99;
+            font-weight: bold;
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .module-item {
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+
+        .module-item:hover {
+            transform: translateY(-5px);
+            border-color: #004a99;
+        }
+
+        .module-item strong {
+            display: block;
+            color: #004a99;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+
+        .module-item p {
+            font-size: 0.85em;
+            margin: 0;
+            color: #666;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #888;
+            margin: 40px 0;
+            width: 100%;
+        }
     </style>
     <script src="header.js" defer></script>
-    <style>
-        .home-h1 {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--primary);
-            text-align: center;
-            margin-top: 20px;
-        }
-        .home-h3 {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
-            text-align: center;
-            margin-top: 20px;
-        }
-        .home-p {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--primary);
-            text-align: center;
-            margin-top: 20px;
-        }
-    </style>
 </head>
 <body>
-    <div id="header-placeholder"></div>
-    <h1 class="home-h1">Home</h1>
-    <script src="footer.js" defer></script>
-    <div id="footer-placeholder"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <h3 class="home-h3">Bem vindo ao site de conhecimento em vendas sobre a plataforma ConnectPlug</h3>
-    <p class="home-p">Este site foi criado para ajudar os vendedores a entenderem melhor a plataforma ConnectPlug e como ela funciona.</p>
-    <p class="home-p">Aqui você encontrará informações sobre os módulos, integrações, equipamentos, e muito mais.</p>
-    <p class="home-p">Bons Estudos e bons vendas!</p>
-</body>
 
+<div class="container">
+    <div id="header-placeholder"></div>
+
+    <header>
+        <h1>Knowledge Center</h1>
+        <p>Acelerando Vendas com Conhecimento Técnico</p>
+    </header>
+
+    <section>
+        <div class="welcome-box">
+            Bem-vindo ao portal definitivo de capacitação sobre a plataforma ConnectPlug.
+        </div>
+
+        <h2>O que você encontrará aqui?</h2>
+        <p>Este material foi consolidado para fornecer aos consultores de vendas uma visão 360º de nossas soluções, argumentos de impacto e especificações técnicas. O portal está dividido nos seguintes pilares:</p>
+
+        <div class="modules-grid">
+            <div class="module-item">
+                <strong>Pagamentos Integrados (TEF)</strong>
+                <p>Segurança total nas transações e fim dos erros de digitação no caixa.</p>
+            </div>
+            <div class="module-item">
+                <strong>Inteligência Fiscal (Facilita NF-e)</strong>
+                <p>Automação de XMLs e conformidade direta com a SEFAZ.</p>
+            </div>
+            <div class="module-item">
+                <strong>Dados e Estratégia (BI)</strong>
+                <p>Relatórios preditivos e gestão de metas para tomadas de decisão assertivas.</p>
+            </div>
+            <div class="module-item">
+                <strong>Atendimento Gastronômico</strong>
+                <p>Gestão completa de Mesas, Comandas, KDS e Smart POS móvel.</p>
+            </div>
+            <div class="module-item">
+                <strong>Inovação (Autoatendimento)</strong>
+                <p>Totens e cardápios digitais para aumentar o ticket médio e reduzir filas.</p>
+            </div>
+            <div class="module-item">
+                <strong>Retenção (Fidelidade)</strong>
+                <p>Mecânicas de pontos e cashback para transformar clientes em fãs.</p>
+            </div>
+            <div class="module-item">
+                <strong>HUB de Integrações</strong>
+                <p>Conexão com mais de 30 plataformas de Delivery, E-commerce e TAP.</p>
+            </div>
+            <div class="module-item">
+                <strong>Hardware Homologado</strong>
+                <p>Guia técnico de impressoras, balanças e equipamentos compatíveis.</p>
+            </div>
+            <div class="module-item">
+                <strong>Operação em Tempo Real</strong>
+                <p>Sincronização remota e backup contínuo para segurança dos dados.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Como utilizar este portal?</h2>
+        <ul>
+            <li>Use o <strong>menu de navegação</strong> no topo para acessar cada módulo individualmente.</li>
+            <li>Estude os <strong>Argumentos de Venda</strong> para contornar objeções de clientes.</li>
+            <li>Consulte os <strong>Requisitos de Hardware</strong> antes de fechar orçamentos complexos.</li>
+        </ul>
+        <p style="text-align: center; margin-top: 30px; font-weight: bold; color: #004a99;">Bons estudos e ótimas vendas!</p>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <div class="footer">
+        <p>© 2026 ConnectPlug - Material de Apoio Interno</p>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</body>
 </html>
