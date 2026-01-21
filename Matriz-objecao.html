@@ -94,6 +94,15 @@
             min-height: 80px;
         }
 
+        /* Override do style.css (que deixa #matrizDescricao p em negrito) */
+        #matrizDescricao p {
+            font-weight: 400;
+        }
+
+        #matrizDescricao strong {
+            font-weight: 700;
+        }
+
         .highlight-nlp {
             color: #004a99;
             font-weight: bold;
@@ -189,6 +198,7 @@
             <option value="vitalicio">"Prefiro um sistema vitalício (taxa única)."</option>
             <option value="sistema-caro">"Achei o sistema caro."</option>
             <option value="validar">"Preciso falar com meu sócio/esposa primeiro."</option>
+            <option value="achou-ruim-multa">"Variações de 'não faz sentido pagar multa se o sistema é bom'."</option>
         </select>
         
         <div id="matrizDescricao" class="matriz-div">
@@ -233,6 +243,14 @@
             "vitalicio": "<span class='highlight-nlp'>[Autoridade]</span> 'Sistemas vitalícios são como carros antigos: não têm atualização, segurança ou suporte quando você mais precisa. Na ConnectPlug, você paga pela evolução constante e um time de suporte que é seu parceiro de negócio. Você prefere uma taxa única ou a segurança de nunca parar de vender?'",
             "sistema-caro": "<span class='highlight-nlp'>[Contraste]</span> 'Caro em relação a quê? Se eu te mostrar que o sistema se paga sozinho ao evitar 5% de perdas no seu estoque, ele ainda pareceria um custo ou passaria a ser um investimento de lucro imediato?'",
             "validar": "<span class='highlight-nlp'>[Ponte ao Futuro]</span> 'É excelente que vocês decidam juntos. Para que você tenha autoridade ao apresentar para ele, vamos fazer uma breve demo? Assim você não leva apenas um preço, mas a solução pronta para ele aprovar.'",
+            "achou-ruim-multa": `Entendo perfeitamente sua preocupação. Quando olhamos apenas para o 'software', parece que não há um custo físico, mas deixa eu te explicar os bastidores dessa cláusula para você ficar mais tranquilo: <br><br>
+<strong>Por que a cláusula 5.2 existe?</strong><br><br>
+<strong>Investimento em Implementação:</strong> Embora não enviemos máquinas, a ConnectPlug investe horas de profissionais especializados para realizar a configuração do seu sistema e os treinamentos da sua equipe.<br><br>
+<strong>Subsídio do Plano:</strong> O valor que você está pagando já contempla um desconto diferenciado que oferecemos justamente em troca do compromisso de permanência por 12 meses.<br><br>
+<strong>Manutenção e Atualizações:</strong> Esse valor garante que você tenha acesso a notas fiscais ilimitadas, suporte técnico e atualizações constantes sem custos adicionais de licenciamento durante o ano.<br><br>
+<strong>O objetivo é a sua operação rodar</strong><br><br>
+Essa multa de 30% sobre as parcelas restantes é uma garantia de que conseguimos manter essa estrutura de baixo custo mensal para você, cobrindo os custos operacionais que temos logo na ativação da sua conta.<br><br>
+Nosso foco total agora é o seu sucesso. O time de relacionamento já está ciente e eles vão focar em deixar tudo pronto para que seu negócio ganhe tanta agilidade que o cancelamento nem passe pela sua cabeça.`,
         };
 
         matrizDescricaoDiv.innerHTML = "<p>" + (matrizDescricaoMap[opcaoSelecionada] || "Selecione uma opção acima.") + "</p>";

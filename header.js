@@ -13,7 +13,11 @@ var headerHTML = '<header class="cabeça" id="form-header">' +
         '<a href="Real-Time.html" class="header-link">Real-Time</a>' +
         '<a href="Mesas-e-comandas.html" class="header-link">Mesas e Comandas</a>' +
         '<a href="Tef.html" class="header-link">TEF</a>' +
+        '<a href="SmartTEF.html" class="header-link">Smart TEF</a>' +
         '<a href="Coletor-de-dados.html" class="header-link">Coletor de Dados</a>' +
+        '<a href="Painel-Senha.html" class="header-link">Painel de Senha</a>' +
+        '<a href="Mytapp.html" class="header-link">MyTapp</a>' +
+        '<a href="Beerpass.html" class="header-link">Beerpass</a>' +
         '<a href="Equipamentos.html" class="header-link">Equipamentos</a>' +
         '<a href="Formulario-sdr.html" class="header-link">SDR</a>' +
         '<a href="Formulario-closer.html" class="header-link">Formulário</a>' +
@@ -89,6 +93,69 @@ function carregarHeader() {
     
     // Inicializa o menu após o header ser carregado
     inicializarMenu();
+    inicializarHardwareCards();
+}
+
+function inicializarHardwareCards() {
+    // Torna cards (.hardware-card) colapsáveis quando ultrapassarem 230px de altura
+    var COLLAPSED_HEIGHT = 230;
+    var cards = document.querySelectorAll('.hardware-card');
+    if (!cards || cards.length === 0) return;
+
+    cards.forEach(function(card) {
+        if (card.classList && card.classList.contains('no-expand')) return;
+        // Evita duplicar botões em caso de reinicialização
+        if (card.dataset && card.dataset.expandInit === '1') return;
+        if (card.dataset) card.dataset.expandInit = '1';
+
+        // Garante que a medição seja feita sem max-height aplicado
+        var previousMaxHeight = card.style.maxHeight;
+        card.style.maxHeight = '';
+
+        var needsCollapse = card.scrollHeight > COLLAPSED_HEIGHT;
+        if (!needsCollapse) {
+            card.style.maxHeight = previousMaxHeight || '';
+            return;
+        }
+
+        card.classList.add('is-collapsible');
+        card.style.maxHeight = COLLAPSED_HEIGHT + 'px';
+
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'hardware-card-expand-btn';
+        btn.textContent = 'Ver mais';
+        btn.setAttribute('aria-expanded', 'false');
+
+        btn.addEventListener('click', function() {
+            var expanded = card.classList.contains('is-expanded');
+
+            if (expanded) {
+                // Colapsa
+                card.classList.remove('is-expanded');
+                btn.textContent = 'Ver mais';
+                btn.setAttribute('aria-expanded', 'false');
+                // Reaplica altura colapsada com transição
+                card.style.maxHeight = COLLAPSED_HEIGHT + 'px';
+            } else {
+                // Expande
+                card.classList.add('is-expanded');
+                btn.textContent = 'Ver menos';
+                btn.setAttribute('aria-expanded', 'true');
+                // Define maxHeight para scrollHeight para animar "abrindo"
+                card.style.maxHeight = card.scrollHeight + 'px';
+            }
+        });
+
+        // Se o usuário redimensionar a janela, atualiza alturas do card expandido
+        window.addEventListener('resize', function() {
+            if (card.classList.contains('is-expanded')) {
+                card.style.maxHeight = card.scrollHeight + 'px';
+            }
+        });
+
+        card.appendChild(btn);
+    });
 }
 
 function inicializarMenu() {

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Vendas: Integração Beerpass ConnectPlug</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            margin: 20px auto;
+            background-color: transparent;
+        }
+
+        header {
+            background-color: #f39c12; /* Ambar/Cerveja */
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 42px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        section:not(:first-of-type) {
+            border-radius: 12px;
+        }
+
+        h2 { 
+            color: #d35400; 
+            border-bottom: 2px solid #fef5e7; 
+            padding-bottom: 10px; 
+            margin-top: 0;
+            font-family: 'Kanit', sans-serif;
+            text-transform: uppercase;
+        }
+
+        h3 { 
+            color: #2c3e50; 
+            margin-top: 25px; 
+            border-left: 5px solid #f39c12; 
+            padding-left: 15px;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        ul, ol { padding-left: 25px; }
+        li { margin-bottom: 12px; }
+
+        .highlight {
+            background-color: #fef5e7;
+            border-left: 5px solid #f39c12;
+            padding: 20px;
+            margin: 20px 0;
+            font-weight: bold;
+            border-radius: 0 8px 8px 0;
+            color: #935116;
+        }
+
+        .price-tag {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 6px 18px;
+            border-radius: 25px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            font-size: 0.9em;
+        }
+
+        table th, table td {
+            border: 1px solid #eee;
+            padding: 15px;
+            text-align: left;
+        }
+
+        th { background-color: #fcfcfc; color: #d35400; text-transform: uppercase; }
+
+        .faq-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fcfcfc;
+            border-radius: 8px;
+            border: 1px solid #f0f0f0;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            color: #d35400;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #888;
+            margin: 40px 0;
+            width: 100%;
+        }
+    </style>
+    <script src="header.js" defer></script>
+</head>
+<body>
+
+    
+    <div class="container">
+    <div id="header-placeholder"></div>
+    <header>
+        <h1>Integração Beerpass</h1>
+        <p>Autosserviço de Bebidas a Granel com Gestão Unificada</p>
+    </header>
+
+    <section>
+        <span class="price-tag">Módulo Pago</span>
+        <h2>1. O que é a Integração Beerpass?</h2>
+        <p>A <strong>Beerpass</strong> é um sistema de autosserviço que permite ao cliente se servir diretamente de torneiras de chopp, gin, vinho ou qualquer bebida a granel. A integração conecta o hardware da Beerpass ao ecossistema <strong>ConnectPlug</strong>.</p>
+        <p>Com esta solução, o estabelecimento ganha um controle rigoroso sobre os barris, monitorando cada mililitro servido e unificando o financeiro. O cliente utiliza um cartão ou pulseira <strong>RFID</strong> para liberar as torneiras e registrar o consumo automaticamente no PDV.</p>
+    </section>
+
+    <section>
+        <h2>2. Como Funciona</h2>
+        <p>A operação é dividida entre a experiência física nas torneiras e a gestão digital no sistema:</p>
+        
+        
+        <ul>
+            <li><strong>Modelos de Consumo:</strong> Pode operar como <strong>Pré-pago</strong> (carrega créditos antes) ou <strong>Pós-pago</strong> (consome e paga na saída).</li>
+            <li><strong>Fluxo Operacional:</strong> O cliente bipa o cartão RFID na torneira -> serve a quantidade desejada -> o sistema calcula o valor baseado no preço por litro e debita/acumula o saldo.</li>
+            <li><strong>Sincronização de Cadastro:</strong> Produtos cadastrados no ERP ConnectPlug como "Tipo Chopp" ou "Tipo Geral" são exportados automaticamente para a retaguarda Beerpass.</li>
+            <li><strong>Finalização no PDV:</strong> Através da aba "Consumos Beerpass" no PDV 2.0, o operador visualiza o extrato do cliente e encerra a conta.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>3. Argumentos de Venda</h2>
+        <div class="highlight">
+            "Elimine as filas no bar e reduza o desperdício de barril para níveis mínimos, transformando a degustação em uma experiência interativa."
+        </div>
+        <ul>
+            <li><strong>Redução de Desperdício:</strong> No serviço manual, a perda por copo é alta. No autosserviço, o controle de fluxo garante que cada gota servida seja contabilizada.</li>
+            <li><strong>Aumento do Ticket Médio:</strong> A facilidade de "provar" pequenas doses de rótulos caros incentiva o cliente a consumir mais variedades.</li>
+            <li><strong>Monitoramento em Tempo Real:</strong> O "Tap Monitor" permite ver quantos litros restam em cada barril diretamente na tela, avisando o momento exato da troca.</li>
+            <li><strong>Otimização de Equipe:</strong> Menos funcionários "tirando chopp" atrás do balcão e mais equipe focada em atendimento consultivo e hospitalidade.</li>
+            <li><strong>Dados Estratégicos (BeerInteligence):</strong> Relatórios gráficos sobre volume vendido, lucratividade por barril e comportamento de consumo por período.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>4. Requisitos e Pré-requisitos</h2>
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Necessidade</th>
+            </tr>
+            <tr>
+                <td><strong>Módulo Software</strong></td>
+                <td>Contratação do módulo "Integração Tap" no plano ConnectPlug.</td>
+            </tr>
+            <tr>
+                <td><strong>Hardware Beerpass</strong></td>
+                <td>Controladores de fluxo, leitor RFID e telas de torneira instalados.</td>
+            </tr>
+            <tr>
+                <td><strong>Credenciais</strong></td>
+                <td>Token e Beerpass ID (solicitados via grupo oficial Beerpass+CPlug).</td>
+            </tr>
+            <tr>
+                <td><strong>PDV</strong></td>
+                <td>Uso exclusivo no <strong>PDV 2.0 (Windows)</strong>.</td>
+            </tr>
+            <tr>
+                <td><strong>Cadastro de Cliente</strong></td>
+                <td>Obrigatório Nome, CPF válido, Nascimento e marcação da flag "Cliente Tap".</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>5. Limitações</h2>
+        <ul>
+            <li><strong>Sem Mesas e Comandas:</strong> A integração Beerpass opera apenas via PDV (Balcão), não possuindo comunicação com o mapa de mesas do sistema.</li>
+            <li><strong>Android Indisponível:</strong> Não é possível realizar a gestão ou finalização de consumos via aplicativos móveis Android.</li>
+            <li><strong>Sem Atributos:</strong> A integração não suporta produtos com variações/atributos automáticos.</li>
+            <li><strong>Pessoa Jurídica:</strong> O cadastro para uso do sistema TAP é restrito a Pessoas Físicas.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>6. Dúvidas Frequentes (FAQ)</h2>
+        
+        <div class="faq-item">
+            <span class="faq-question">Onde o cliente compra os cartões RFID ou pulseiras?</span>
+            <p>A Beerpass não fornece os cartões diretamente para evitar repasse de custos. O lojista é orientado a comprar de fornecedores parceiros homologados para garantir o melhor preço e prazo.</p>
+        </div>
+
+        <div class="faq-item">
+            <span class="faq-question">Posso emitir nota fiscal sobre a recarga de créditos?</span>
+            <p>Não. A emissão de NFC-e ou NF-e ocorre apenas sobre a <strong>venda/consumo realizado</strong>. O valor em crédito no cartão fica disponível para uso futuro e só gera nota quando transformado em produto consumido.</p>
+        </div>
+
+        <div class="faq-item">
+            <span class="faq-question">Como o sistema controla o fim do barril?</span>
+            <p>O sistema "virtualiza" o barril físico. O gestor cadastra o volume (ex: 30L ou 50L) no portal Beerpass e o sistema abate cada mililitro servido, notificando quando o nível está crítico.</p>
+        </div>
+
+        <div class="faq-item">
+            <span class="faq-question">Consigo carregar créditos pelo Totem de Autoatendimento?</span>
+            <p>Sim. É possível realizar a recarga de créditos e a consulta de saldo através da solução de Autoatendimento da ConnectPlug integrada.</p>
+        </div>
+
+        <div class="faq-item">
+            <span class="faq-question">A integração funciona para outras bebidas além de chopp?</span>
+            <p>Sim. O sistema pode ser configurado para qualquer líquido a granel, como vinhos, drinks prontos (Gin Tônica, Aperol) e até refrigerantes.</p>
+        </div>
+    </section>
+
+    <div class="footer">
+        <p>© 2026 ConnectPlug - Material de Apoio ao Time de Vendas</p>
+    </div>
+</div>
+
+</body>
+</html>

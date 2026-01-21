@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Vendas: Smart TEF ConnectPlug</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <script src="header.js" defer></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            margin: 20px auto;
+            background-color: transparent;
+        }
+
+        header {
+            background-color: #2980b9; /* Azul Tecnologia/Financeiro */
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 28px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        section:not(:first-of-type) {
+            border-radius: 12px;
+        }
+
+        h2 { 
+            color: #2980b9; 
+            border-bottom: 2px solid #e8f4fd; 
+            padding-bottom: 10px; 
+            margin-top: 0;
+            font-family: 'Kanit', sans-serif;
+            text-transform: uppercase;
+        }
+
+        h3 { 
+            color: #2c3e50; 
+            margin-top: 25px; 
+            border-left: 5px solid #2980b9; 
+            padding-left: 15px;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        ul, ol { padding-left: 25px; }
+        li { margin-bottom: 12px; }
+
+        .highlight {
+            background-color: #e8f4fd;
+            border-left: 5px solid #2980b9;
+            padding: 20px;
+            margin: 20px 0;
+            font-weight: bold;
+            border-radius: 0 8px 8px 0;
+            color: #1a5276;
+        }
+
+        .price-tag {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 6px 18px;
+            border-radius: 25px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+
+        table, th, td {
+            border: 1px solid #eee;
+            padding: 15px;
+            font-size: 0.9em;
+        }
+
+        th { 
+            background-color: #fcfcfc; 
+            color: #2980b9; 
+            text-align: left;
+            text-transform: uppercase;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #888;
+            margin: 40px 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="container">
+    <div id="header-placeholder"></div>
+    <header>
+        <h1>Smart TEF (CPlug Pay)</h1>
+        <p>A Evolução do Pinpad: Mobilidade e Integração Sem Fios</p>
+    </header>
+
+    <section>
+        <span class="price-tag">Módulo Adicional Pago por Ponto</span>
+        <h2>1. O que é o Smart TEF?</h2>
+        <p>O <strong>Smart TEF</strong> é uma tecnologia exclusiva da ConnectPlug que transforma máquinas de cartão inteligentes (Smart POS) em <strong>pinpads sem fio</strong> totalmente integrados ao PDV Desktop (Windows).</p>
+        <p>Através do aplicativo <strong>CPlug Pay</strong>, o hardware da máquina de cartão comunica-se em tempo real com o sistema, permitindo que o operador finalize vendas no computador e o valor apareça instantaneamente na maquininha para o cliente pagar.</p>
+    </section>
+
+    <section>
+        <h2>2. Como Funciona</h2>
+        
+        <h3>Fluxo de Vinculação</h3>
+        <p>Diferente do TEF tradicional que exige cabos USB, a vinculação é feita de forma digital:</p>
+        <ul>
+            <li><strong>QR Code:</strong> O PDV Desktop gera um código na tela; o operador usa a câmera da Smart POS para escanear e realizar o pareamento instantâneo.</li>
+            <li><strong>Código OTP:</strong> Em adquirentes como Vindi, PagSeguro e Vero, utiliza-se um código identificador (OTP) recebido com o equipamento para ativar a comunicação.</li>
+        </ul>
+
+        <h3>Tecnologia Deeplink (Stone)</h3>
+        <p>Para clientes Stone, o sistema utiliza <strong>Deeplink</strong>, onde o CPlug Pay chama automaticamente o app oficial da Stone para processar o pagamento com o máximo de segurança bancária.</p>
+        
+        <div class="highlight">
+            Independência de Bandeiras:<br>
+            Com o Deeplink, novas bandeiras ou vouchers lançados pela Stone aparecem automaticamente no Smart TEF, sem necessidade de atualizar o app da ConnectPlug.
+        </div>
+    </section>
+
+    <section>
+        <h2>3. Argumentos de Venda</h2>
+        <ul>
+            <li><strong>Mobilidade e Fim das Filas:</strong> Receba pagamentos em qualquer lugar da loja ou diretamente na mesa do cliente, mantendo a venda integrada ao caixa central.</li>
+            <li><strong>Redundância de Conexão:</strong> Funciona via Wi-Fi ou 4G. Se a internet fixa da loja cair, a maquininha continua transacionando pela rede móvel.</li>
+            <li><strong>Fim dos Erros de Digitação:</strong> O valor da venda é enviado automaticamente do PDV para a máquina. O operador não precisa digitar o preço, eliminando diferenças de centavos no fechamento.</li>
+            <li><strong>Performance Superior:</strong> Como o processamento pesado do pagamento é delegado ao app da adquirente (Deeplink), o PDV ConnectPlug fica mais leve e rápido.</li>
+            <li><strong>Controle Financeiro Preciso:</strong> O fechamento de caixa pode ser feito por bandeira, facilitando a conciliação bancária.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>4. Requisitos e Pré-requisitos</h2>
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Especificação</th>
+            </tr>
+            <tr>
+                <td><strong>Hardware Homologado</strong></td>
+                <td>Stone (P2-B, L300), Cielo (Lio v2/v3, DX8000), Safrapay (A8), Tectoy T8 e Sunmi P2.</td>
+            </tr>
+            <tr>
+                <td><strong>Contrato de Cartão</strong></td>
+                <td>O contrato deve estar configurado no ERP com o provedor da adquirente ativa.</td>
+            </tr>
+            <tr>
+                <td><strong>Rede</strong></td>
+                <td>Conexão estável (Wi-Fi ou 4G) para comunicação com o servidor TEF.</td>
+            </tr>
+            <tr>
+                <td><strong>Configuração ERP</strong></td>
+                <td>Vincular o terminal Desktop ao aplicativo Smart TEF na área administrativa.</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>5. Limitações</h2>
+        <ul>
+            <li><strong>Pagamento PIX:</strong> Atualmente o QR Code de PIX costuma ser exibido na tela do PDV Desktop; a exibição direta na tela da Smart POS está em fase de desenvolvimento para alguns modelos.</li>
+            <li><strong>Cancelamentos (Estorno):</strong> Devem ser realizados primeiro no app da maquininha (usando o código de autorização do comprovante) e depois cancelados manualmente no PDV em "Últimas Vendas".</li>
+            <li><strong>Integrações Delivery:</strong> O app CPlug Pay na Smart POS não recebe pedidos diretos de iFood ou Rappi; a gestão desses pedidos deve permanecer no PDV Desktop.</li>
+            <li><strong>Desvinculação:</strong> O fluxo correto para trocar de terminal é desvincular primeiro pelo App da maquininha e somente depois pelo PDV Desktop.</li>
+        </ul>
+    </section>
+
+    <div class="footer">
+        <p>© 2026 ConnectPlug - Material de Apoio ao Time de Vendas</p>
+    </div>
+</div>
+
+</body>
+</html>

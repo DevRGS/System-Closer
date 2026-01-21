@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Vendas: Painel de Senhas ConnectPlug</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            margin: 20px auto;
+            background-color: transparent;
+        }
+
+        header {
+            background-color: #6c5ce7; /* Violeta Moderno para Comunicação */
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 28px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        section:not(:first-of-type) {
+            border-radius: 12px;
+        }
+
+        h2 { 
+            color: #6c5ce7; 
+            border-bottom: 2px solid #efedff; 
+            padding-bottom: 10px; 
+            margin-top: 0;
+            font-family: 'Kanit', sans-serif;
+            text-transform: uppercase;
+        }
+
+        h3 { 
+            color: #2c3e50; 
+            margin-top: 25px; 
+            border-left: 5px solid #6c5ce7; 
+            padding-left: 15px;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        ul, ol { padding-left: 25px; }
+        li { margin-bottom: 12px; }
+
+        .highlight {
+            background-color: #efedff;
+            border-left: 5px solid #6c5ce7;
+            padding: 20px;
+            margin: 20px 0;
+            font-weight: bold;
+            border-radius: 0 8px 8px 0;
+            color: #4834d4;
+        }
+
+        .price-tag {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 6px 18px;
+            border-radius: 25px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+
+        table, th, td {
+            border: 1px solid #eee;
+            padding: 15px;
+            font-size: 0.9em;
+        }
+
+        th { 
+            background-color: #fcfcfc; 
+            color: #6c5ce7; 
+            text-align: left;
+            text-transform: uppercase;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #888;
+            margin: 40px 0;
+            width: 100%;
+        }
+    </style>
+    <script src="header.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+    <div id="header-placeholder"></div>
+    <header>
+        <h1>Painel de Senhas</h1>
+        <p>Acompanhamento de Pedidos em Tempo Real e Experiência do Cliente</p>
+    </header>
+
+    <section>
+        <span class="price-tag">Módulo Pago</span>
+        <h2>1. O que é?</h2>
+        <p>O <strong>Painel de Senhas</strong> é uma solução robusta projetada para organizar o fluxo de retirada de pedidos e profissionalizar a comunicação com o cliente final.</p>
+        <p>Ele permite que o estabelecimento abandone métodos manuais ou dispositivos físicos caros (como pagers), oferecendo uma interface visual onde o cliente acompanha o progresso do seu pedido — desde a preparação até a conclusão — em telas espalhadas na loja ou no seu próprio smartphone.</p>
+    </section>
+
+    <section>
+        <h2>2. Como Funciona</h2>
+        
+        <h3>Fluxo de Operação</h3>
+        <p>O sistema automatiza a jornada do pedido em três etapas principais:</p>
+        <ul>
+            <li><strong>Emissão:</strong> Ao finalizar uma venda no balcão, totem ou smart menu, o sistema gera automaticamente uma senha ou utiliza o nome do cliente.</li>
+            <li><strong>Acompanhamento:</strong> O pedido entra na coluna "Preparando". O cliente pode escanear um <strong>QR Code impresso no cupom</strong> para acompanhar o status direto pelo celular <strong>(precisa do módulo Painel de Senhas Mobile para acompanhar no celular)</strong>.</li>
+            <li><strong>Notificação:</strong> Quando o pedido é finalizado (pelo operador ou via KDS), ele pula para a coluna "Concluído" com um alerta sonoro e visual na tela.</li>
+        </ul>
+
+        
+        <h3>Integração com KDS (Kitchen Display System)</h3>
+        <p>O painel atua em perfeita sincronia com a cozinha:</p>
+        <ol>
+            <li>O pedido é lançado -> Aparece como <strong>"Preparando"</strong> no painel.</li>
+            <li>A cozinha finaliza no KDS -> O pedido move-se sozinho para <strong>"Concluído"</strong>.</li>
+            <li>A expedição entrega o prato -> O pedido sai da tela automaticamente.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>3. Argumentos de Venda</h2>
+        <div class="highlight">
+            "Elimine a desorganização no balcão e dê liberdade ao seu cliente. Ele acompanha o pedido de onde estiver, sem precisar ficar vigiando o caixa."
+        </div>
+        <ul>
+            <li><strong>Higiene e Praticidade:</strong> Substitui os pagers físicos (que passam de mão em mão) pelo celular do próprio cliente ou monitores fixos.</li>
+            <li><strong>Comunicação Personalizada:</strong> Permite chamar o cliente pelo <strong>nome</strong> ao invés de números frios, criando uma conexão mais próxima com a marca.</li>
+            <li><strong>Prevenção de Erros:</strong> O sistema bloqueia a inserção de nomes duplicados em aberto, evitando confusões na hora da entrega.</li>
+            <li><strong>Layout 100% Customizável:</strong> O lojista pode alterar cores, termos (ex: mudar "Pronto" para "Bom Apetite!") e colocar uma imagem de fundo com a logo da loja.</li>
+            <li><strong>Otimização de Equipe:</strong> O operador de caixa não precisa gritar nomes ou gerenciar senhas manualmente; o sistema cuida da comunicação enquanto ele foca em vender.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>4. Requisitos e Pré-requisitos</h2>
+        <table>
+            <tr>
+                <th>Requisito</th>
+                <th>Especificação</th>
+            </tr>
+            <tr>
+                <td><strong>Versão do Sistema</strong></td>
+                <td>PDV Versão 2.10.11 em diante.</td>
+            </tr>
+            <tr>
+                <td><strong>Hardware</strong></td>
+                <td>Qualquer monitor ou TV com entrada HDMI conectada ao computador do PDV ou um terminal dedicado.</td>
+            </tr>
+            <tr>
+                <td><strong>Internet</strong></td>
+                <td>Conexão ativa para sincronização entre PDV, KDS e os celulares dos clientes.</td>
+            </tr>
+            <tr>
+                <td><strong>Configuração</strong></td>
+                <td>Habilitação do módulo no plano e ativação da flag "Exigir nome do cliente" (opcional).</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>5. Limitações</h2>
+        <ul>
+            <li><strong>Delivery de Entrega:</strong> O painel não é compatível com fluxos de motoboys/entregas externas, sendo exclusivo para consumo local e retirada (Take-out).</li>
+            <li><strong>Impressão em POS Móvel:</strong> Não é possível imprimir o QR Code de acompanhamento mobile em pedidos finalizados diretamente em máquinas de cartão (Smart POS).</li>
+            <li><strong>KDS Windows:</strong> A integração automática de status de produção exige o uso do KDS em ambiente Windows.</li>
+            <li><strong>Sincronização:</strong> O monitor do painel de senhas deve estar na mesma rede ou vinculado ao servidor local para receber atualizações instantâneas.</li>
+        </ul>
+    </section>
+
+    <div class="footer">
+        <p>© 2026 ConnectPlug - Material de Apoio ao Time de Vendas</p>
+    </div>
+</div>
+
+</body>
+</html>

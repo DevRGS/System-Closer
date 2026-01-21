@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Vendas: Integração MyTapp ConnectPlug</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            margin: 20px auto;
+            background-color: transparent;
+        }
+
+        header {
+            background-color: #f39c12; /* Cor de Chopp/Cerveja */
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 48px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        section:not(:first-of-type) {
+            border-radius: 12px;
+        }
+
+        h2 { 
+            color: #d35400; 
+            border-bottom: 2px solid #fef5e7; 
+            padding-bottom: 10px; 
+            margin-top: 0;
+            font-family: 'Kanit', sans-serif;
+            text-transform: uppercase;
+        }
+
+        h3 { 
+            color: #2c3e50; 
+            margin-top: 25px; 
+            border-left: 5px solid #f39c12; 
+            padding-left: 15px;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        ul, ol { padding-left: 25px; }
+        li { margin-bottom: 12px; }
+
+        .highlight {
+            background-color: #fef5e7;
+            border-left: 5px solid #f39c12;
+            padding: 20px;
+            margin: 20px 0;
+            font-weight: bold;
+            border-radius: 0 8px 8px 0;
+            color: #935116;
+        }
+
+        .price-tag {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 6px 18px;
+            border-radius: 25px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+
+        table, th, td {
+            border: 1px solid #eee;
+            padding: 15px;
+            font-size: 0.9em;
+        }
+
+        th { 
+            background-color: #fcfcfc; 
+            color: #d35400; 
+            text-align: left;
+            text-transform: uppercase;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fcfcfc;
+            border-radius: 8px;
+            border: 1px solid #f0f0f0;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            color: #d35400;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #888;
+            margin: 40px 0;
+            width: 100%;
+        }
+    </style>
+    <script src="header.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+    <div id="header-placeholder"></div>
+    <header>
+        <h1>Integração MyTapp</h1>
+        <p>Inovação em Autosserviço de Chopp e Gestão Inteligente</p>
+    </header>
+
+    <section>
+        <span class="price-tag">Módulo Pago</span>
+        <h2>1. O que é a Integração MyTapp?</h2>
+        <p>A <strong>MyTapp</strong> é uma solução líder em autosserviço de chopp que permite ao cliente final se servir diretamente nas torneiras do estabelecimento. A integração com a <strong>ConnectPlug</strong> une esse hardware inovador ao nosso sistema de gestão.</p>
+        <p>Com essa união, o lojista centraliza o cadastro de clientes, controle de estoque de barris, gestão financeira e emissão de notas fiscais em uma única plataforma, eliminando a necessidade de operar dois sistemas separadamente.</p>
+    </section>
+
+    <section>
+        <h2>2. Como Funciona</h2>
+        <p>O sistema baseia-se na identificação do cliente via tecnologia RFID (cartão ou pulseira). O fluxo operacional pode seguir dois modelos:</p>
+        
+        
+        <ul>
+            <li><strong>Modelo Pré-pago:</strong> O cliente carrega créditos no cartão RFID no balcão ou totem. À medida que ele se serve, o valor é debitado em tempo real.</li>
+            <li><strong>Modelo Pós-pago:</strong> O cliente consome livremente e o valor acumulado é enviado para sua conta (mesa ou comanda) para pagamento no momento da saída.</li>
+        </ul>
+
+        <h3>A Experiência na Torneira:</h3>
+        <p>Acima de cada torneira, uma tela informa ao cliente o tipo de chopp, o valor por litro e a quantidade exata (em ml) que está sendo servida. O controlador de fluxo garante precisão total no débito do saldo.</p>
+
+        <h3>Integração com PDV 2.0:</h3>
+        <ul>
+            <li><strong>Gestão de Consumo:</strong> Através do botão "Consumos MyTapp" no PDV, o operador consulta e finaliza as vendas acumuladas.</li>
+            <li><strong>Mesas e Comandas:</strong> O consumo da torneira é vinculado automaticamente à mesa ou comanda do cliente no ambiente Windows.</li>
+            <li><strong>Desconto no Pós-pago:</strong> O sistema permite aplicar descontos em consumos acumulados diretamente na tela de finalização.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>3. Argumentos de Venda</h2>
+        <div class="highlight">
+            "Reduza o desperdício de chopp de 30% para apenas 6% e ofereça uma experiência de consumo moderna que fideliza pelo prazer de experimentar."
+        </div>
+        <ul>
+            <li><strong>Economia Drástica:</strong> No modelo tradicional, o desperdício por barril (espuma, sangria, erro de garçom) chega a 30%. Com o autosserviço e controle de fluxo, esse índice cai para cerca de 6%.</li>
+            <li><strong>Respeito ao Tempo do Cliente:</strong> O cliente não precisa esperar o garçom para beber; ele se serve quando e quanto quiser, aumentando o volume de vendas.</li>
+            <li><strong>Redução de Custos Operacionais:</strong> Menos necessidade de garçons focados apenas em servir bebidas, permitindo que a equipe foque em um atendimento consultivo e na venda de pratos.</li>
+            <li><strong>Decisões Baseadas em Dados:</strong> Identifique no BI qual rótulo tem maior giro e qual horário tem maior pico de consumo de chopp.</li>
+            <li><strong>Incentivo à Degustação:</strong> O cliente tem a liberdade de servir apenas 50ml para provar um novo rótulo, perdendo o medo de arriscar em produtos de maior valor agregado.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>4. Requisitos e Pré-requisitos</h2>
+        <table>
+            <tr>
+                <th>Requisito</th>
+                <th>Especificação</th>
+            </tr>
+            <tr>
+                <td><strong>Contratação</strong></td>
+                <td>Módulo "Integração Tap" ativo no plano ConnectPlug.</td>
+            </tr>
+            <tr>
+                <td><strong>Hardware MyTapp</strong></td>
+                <td>Torneiras, controlador de fluxo, telas de torneira e leitor RFID instalados.</td>
+            </tr>
+            <tr>
+                <td><strong>Configuração de Medida</strong></td>
+                <td>Os produtos tipo "Chopp" devem estar configurados em <strong>Litro</strong> no ERP. O sistema faz a conversão automática para ML.</td>
+            </tr>
+            <tr>
+                <td><strong>Credenciais</strong></td>
+                <td>Solicitar Token e URL diretamente para <em>integracao@mytapp.com.br</em>.</td>
+            </tr>
+            <tr>
+                <td><strong>Cadastro de Cliente</strong></td>
+                <td>Obrigatório Nome, CPF válido, Data de Nascimento e marcação da flag "Cliente TAP" no PDV.</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>5. Limitações</h2>
+        <ul>
+            <li><strong>Ambiente Windows:</strong> A integração com o módulo de Mesas e Comandas é exclusiva para o PDV em ambiente Windows.</li>
+            <li><strong>Aplicativo Android:</strong> Não é possível utilizar o aplicativo mobile de garçom (Android) para gerenciar consumos MyTapp.</li>
+            <li><strong>Atributos Manuais:</strong> Variações de produtos (atributos) não são exportadas automaticamente. O código de integração deve ser inserido manualmente (ex: att-784-27).</li>
+            <li><strong>Pessoa Jurídica:</strong> O cadastro de clientes para uso do autosserviço é restrito a Pessoas Físicas (CPF).</li>
+            <li><strong>Listas de Preço:</strong> Embora seja uma integração, a lista de preço deve ser configurada para "Frente de Caixa" ou "Autoatendimento", nunca marcada como módulo de integração.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>6. Dúvidas Frequentes (FAQ)</h2>
+        
+        <div class="faq-item">
+            <span class="faq-question">O cliente consegue carregar o cartão de chopp sozinho?</span>
+            <p>Sim, se o estabelecimento possuir o <strong>Autoatendimento (Totem)</strong> da ConnectPlug, o cliente pode carregar créditos no cartão RFID de forma autônoma.</p>
+        </div>
+
+        <div class="faq-item">
+            <span class="faq-question">O sistema dá baixa automática no estoque de barris?</span>
+            <p>Sim. Cada consumo na torneira gera um registro que, ao ser finalizado no PDV, abate a quantidade exata do estoque configurado no ERP.</p>
+        </div>
+
+        <div class="faq-item">
+            <span class="faq-question">Posso dar desconto para um cliente no modelo pós-pago?</span>
+            <p>Sim. A partir da versão 2.8.0, é possível encontrar o consumo pendente na tela "Consumos MyTapp" do PDV e aplicar descontos antes do fechamento.</p>
+        </div>
+
+        <div class="faq-item">
+            <span class="faq-question">Consigo usar MyTapp com o módulo de Mesas e Comandas?</span>
+            <p>Sim, a partir da versão 2.10.5, o consumo da MyTapp pode ser vinculado diretamente a uma Mesa ou Comanda aberta no PDV Windows.</p>
+        </div>
+
+        <div class="faq-item">
+            <span class="faq-question">Posso usar diferentes listas de preço para o chopp?</span>
+            <p>Sim. A integração permite o uso de <strong>Lista de Preço</strong>, desde que configurada para operar no PDV ou Autoatendimento.</p>
+        </div>
+
+        <div class="faq-item">
+            <span class="faq-question">A integração funciona em cenários de Franquias (Multi-empresa)?</span>
+            <p>Sim. É possível configurar o <strong>ID da filial</strong> na integração para que o consumo seja direcionado e finalizado corretamente na loja correspondente.</p>
+        </div>
+    </section>
+
+    <div class="footer">
+        <p>© 2026 ConnectPlug - Material de Treinamento para o Time de Vendas</p>
+    </div>
+</div>
+
+</body>
+</html>

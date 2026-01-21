@@ -126,13 +126,56 @@
             position: relative;
         }
 
-        .hardware-card strong {
+        /* Colapsável: altura máxima + transição leve */
+        .hardware-card.is-collapsible {
+            max-height: 300px;
+            overflow: hidden;
+            transition: max-height 240ms ease;
+            padding-bottom: 52px; /* espaço pro botão */
+        }
+
+        .hardware-card.is-collapsible.is-expanded {
+            overflow: visible;
+        }
+
+        .hardware-card-expand-btn {
+            position: absolute;
+            right: 14px;
+            bottom: 12px;
+            left: auto;
+            border: 1px solid #e0e0e0;
+            background: #fafafa;
+            color: #2c3e50;
+            border-radius: 8px;
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 0.72em;
+            font-family: 'Kanit', sans-serif;
+            text-transform: uppercase;
+            transition: background 160ms ease, border-color 160ms ease;
+            width: auto;
+        }
+
+        .hardware-card-expand-btn:hover {
+            background: #f2f2f2;
+            border-color: #d6d6d6;
+        }
+
+        /* Título do card (não afeta <strong> dentro de listas) */
+        .hardware-card > strong {
             display: block;
             margin-bottom: 10px;
             color: #2c3e50;
             font-size: 1.1em;
             border-bottom: 1px solid #f0f0f0;
             padding-bottom: 5px;
+        }
+
+        /* Modelos (texto menor) dentro do card de SmartTEF */
+        .hardware-card .models {
+            font-size: 0.85em;
+            font-weight: 400;
+            opacity: 0.95;
         }
 
         .footer {
@@ -217,28 +260,41 @@
                 </ul>
             </div>
 
-            <div class="hardware-card">
-                <button class="copy-btn" onclick="copiarConteudoSat()">Copiar</button>
-                <strong>Dispositivos SAT (SP)</strong>
-                <ul>
-                    <li>Modelos: Tanca S1000, Elgin Smart</li>
-                    <li>Testados: Control ID, Dimep, Sweda, Gertec, Urano, etc.</li>
-                </ul>
-            </div>
 
             <div class="hardware-card">
                 <button class="copy-btn" onclick="copiarbancossitef()">Copiar</button>
                 <strong>Bancos SiTef (PIX)</strong>
                 <ul>
-                    <li>Itaú, Sicredi, Banco do Brasil, Sicoob, Bradesco, Santander</li>
+                    <li><strong>Itaú</strong></li>
+                    <li><strong>Sicredi</strong></li>
+                    <li><strong>Banco do Brasil</strong></li>
+                    <li><strong>Sicoob</strong></li>
+                    <li><strong>Bradesco</strong></li>
+                    <li><strong>Santander</strong></li>
+                    <li><strong>VerdeCard</strong></li>
+                </ul>
+            </div>
+
+            <div class="hardware-card no-expand">
+                <button class="copy-btn" onclick="copiarConteudoPosAndroid()">Copiar</button>
+                <strong>POS Móvel (Smart POS)</strong>
+                <ul>
+                    <li><strong>Stone</strong><span class="models">: P2-B, L300</span></li>
+                    <li><strong>Cielo</strong><span class="models">: Lio v2, Lio v3, DX8000</span></li>
+                    <li><strong>Safrapay</strong><span class="models">: A8</span></li>
                 </ul>
             </div>
 
             <div class="hardware-card">
-                <button class="copy-btn" onclick="copiarConteudoPosAndroid()">Copiar</button>
-                <strong>POS Móvel (Smart POS)</strong>
+                <button class="copy-btn" onclick="copiarConteudoSmartTEF()">Copiar</button>
+                <strong>Maquininhas SmartTEF compatíveis</strong>
                 <ul>
-                    <li>Stone (P2-B / L300), Cielo (Lio v2/v3 / DX8000), Safrapay (A8)</li>
+                    <li><strong>Stone</strong><span class="models">: P2-B, L300</span></li>
+                    <li><strong>Cielo</strong><span class="models">: Lio v2, Lio v3, DX8000</span></li>
+                    <li><strong>Safrapay</strong><span class="models">: A8, Tectoy T8, Sunmi P2</span></li>
+                    <li><strong>Vero</strong><span class="models">: Positivo L300, Sunmi P2, Gertec GPOS 700</span></li>
+                    <li><strong>PagSeguro</strong><span class="models">: P2</span></li>
+                    <li><strong>Vindi</strong><span class="models">: P2</span></li>
                 </ul>
             </div>
 
@@ -246,7 +302,10 @@
                 <button class="copy-btn" onclick="copiarConteudoAutoatendimento()">Copiar</button>
                 <strong>Kits Autoatendimento</strong>
                 <ul>
-                    <li>SK-210, Elgin M10 PRO, Elgin MK15, Tablet Samsung</li>
+                    <li><strong>SK-210</strong> (Cobra com Pinpad PPC 930)</li>
+                    <li><strong>Elgin M10 PRO</strong> (Cobra com Pinpad PPC 930)</li>
+                    <li><strong>Elgin MK15</strong> (Cobra com Pinpad PPC 930)</li>
+                    <li><strong>Tablet Samsung</strong> (Cobra com Pinpad MP15)</li>
                 </ul>
             </div>
         </div>
@@ -317,19 +376,44 @@ Samsung Galaxy Tab A Wi-Fi 2GB Ram 32GB Octa-Core Android 9 Tela de 10.1"`;
 
     function copiarbancossitef() {
         const texto = `*BANCOS CREDENCIADOS SITEF (PIX)*
-Itaú, Sicredi, Banco do Brasil, Sicoob, Bradesco, Santander, VerdeCard.`;
+- Itaú, 
+- Sicredi, 
+- Banco do Brasil, 
+- Sicoob, 
+- Bradesco, 
+- Santander, 
+- VerdeCard.`;
         navigator.clipboard.writeText(texto).then(() => alert('Copiado!'));
     }
 
     function copiarConteudoAutoatendimento() {
         const texto = `*EQUIPAMENTOS AUTOATENDIMENTO*
-- SK-210, Elgin M10 PRO, Elgin MK15, Tablet Samsung Galaxy Tab A.`;
+
+- SK-210 (Cobra com Pinpad PPC 930), 
+- Elgin M10 PRO (Cobra com Pinpad PPC 930), 
+- Elgin MK15 (Cobra com Pinpad PPC 930), 
+- Tablet Samsung Galaxy Tab A (Cobra com Pinpad MP15), 
+`;
         navigator.clipboard.writeText(texto).then(() => alert('Copiado!'));
     }
 
     function copiarConteudoPosAndroid() {
         const texto = `*POS HOMOLOGADAS PDV ANDROID*
-- Stone (P2-B / L300), Cielo (Lio / DX8000), Safrapay (A8).`;
+- Stone: P2-B, L300
+- Cielo: Lio v2, Lio v3, DX8000
+- Safrapay: A8`;
+        navigator.clipboard.writeText(texto).then(() => alert('Copiado!'));
+    }
+
+    function copiarConteudoSmartTEF() {
+        const texto = `*MAQUININHAS SMARTTEF COMPATÍVEIS*
+
+- Stone: P2-B, L300
+- Cielo: Lio v2, Lio v3, DX8000
+- Safrapay: A8, Tectoy T8, Sunmi P2
+- Vero: Positivo L300, Sunmi P2, Gertec GPOS 700
+- PagSeguro: P2
+- Vindi: P2`;
         navigator.clipboard.writeText(texto).then(() => alert('Copiado!'));
     }
 </script>
