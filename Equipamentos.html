@@ -124,41 +124,9 @@
             padding: 20px;
             border-radius: 10px;
             position: relative;
-        }
-
-        /* Colapsável: altura máxima + transição leve */
-        .hardware-card.is-collapsible {
-            max-height: 300px;
-            overflow: hidden;
-            transition: max-height 240ms ease;
-            padding-bottom: 52px; /* espaço pro botão */
-        }
-
-        .hardware-card.is-collapsible.is-expanded {
-            overflow: visible;
-        }
-
-        .hardware-card-expand-btn {
-            position: absolute;
-            right: 14px;
-            bottom: 12px;
-            left: auto;
-            border: 1px solid #e0e0e0;
-            background: #fafafa;
-            color: #2c3e50;
-            border-radius: 8px;
-            padding: 6px 10px;
-            cursor: pointer;
-            font-size: 0.72em;
-            font-family: 'Kanit', sans-serif;
-            text-transform: uppercase;
-            transition: background 160ms ease, border-color 160ms ease;
-            width: auto;
-        }
-
-        .hardware-card-expand-btn:hover {
-            background: #f2f2f2;
-            border-color: #d6d6d6;
+            min-height: 215px;
+            height: auto;
+            box-sizing: border-box;
         }
 
         /* Título do card (não afeta <strong> dentro de listas) */
@@ -275,7 +243,7 @@
                 </ul>
             </div>
 
-            <div class="hardware-card no-expand">
+            <div class="hardware-card">
                 <button class="copy-btn" onclick="copiarConteudoPosAndroid()">Copiar</button>
                 <strong>POS Móvel (Smart POS)</strong>
                 <ul>
@@ -306,6 +274,39 @@
                     <li><strong>Elgin M10 PRO</strong> (Cobra com Pinpad PPC 930)</li>
                     <li><strong>Elgin MK15</strong> (Cobra com Pinpad PPC 930)</li>
                     <li><strong>Tablet Samsung</strong> (Cobra com Pinpad MP15)</li>
+                </ul>
+            </div>
+
+            <div class="hardware-card">
+                <button class="copy-btn" onclick="copiarConteudoEtiquetadoras()">Copiar</button>
+                <strong>Etiquetadoras Compatíveis</strong>
+                <ul>
+                    <li>Argox 214 Plus OS</li>
+                    <li>Elgin L42</li>
+                    <li>Elgin L42 PRO</li>
+                    <li>Zebra GC420 (Não pode ser modelo EPL)</li>
+                    <li>Pimaco A4 (Impressoras de folha A4 para modelo de etiqueta A4 (Não realizamos instalação de impressora A4.)</li>
+                </ul>
+            </div>
+
+            <div class="hardware-card">
+                <button class="copy-btn" onclick="copiarConteudoLeitorCodigo()">Copiar</button>
+                <strong>Leitor de Código de Barras</strong>
+                <ul>
+                    <li>HoneywellMS5145</li>
+                    <li>Leitor Código de Barras Fixo 1D Áquila S-3200 - Bematech (PARA TOTEM SELF CHECKOUT)</li>
+                    <li>EL8600 - Leitor de Código de Barras fixo, 2D - Elgin</li>
+                </ul>
+            </div>
+
+            <div class="hardware-card">
+                <button class="copy-btn" onclick="copiarConteudoGavetas()">Copiar</button>
+                <strong>Gavetas Automáticas</strong>
+                <ul>
+                    <li>Todos os modelos funcionam.</li>
+                    <li>Caso o cliente queira uma recomendação:</li>
+                    <li>- Bematech GD50</li>
+                    <li>- Bematech GD56</li>
                 </ul>
             </div>
         </div>
@@ -341,6 +342,7 @@
     // Mantendo todas as funções originais para garantir o funcionamento da cópia
     function copiarConteudoImpTer() {
         const texto = `MODELOS RECOMENDADOS DE *IMPRESSORAS TÉRMICAS*:
+
 - Epson TM T-20 (REDE)
 - Elgin i9 (REDE)
 - Bematech MP4200TH (REDE)`;
@@ -349,7 +351,13 @@
 
     function copiarConteudoBalanca() {
         const texto = `MODELOS RECOMENDADOS DE *BALANÇA*
-- Toledo Prix 3 (Light, Plus, Fit), Prix 4, 5 e 2187
+
+- Toledo Prix 3 Light
+- Toledo Prix 3 Plus
+- Toledo Prix 3 Fit
+- Toledo Prix 4
+- Toledo Prix 5
+- Toledo Prix 2187
 - Urano (Protocolo PRT-3)
 - Filizola Platina 3/4/5
 - Balanças Elgin Linha DP`;
@@ -358,12 +366,17 @@
 
     function copiarConteudoPc() {
         const texto = `*COMPUTADORES - REQUISITOS MINIMOS*
-Windows 10 e 11. RAM: 8GB. SSD: 250 GB. Processador: i3.`;
+
+Windows 10 ou 11. 
+Memória RAM: 8GB. 
+Armazenamento SSD: 250 GB. 
+Processador: i3 ou superior.`;
         navigator.clipboard.writeText(texto).then(() => alert('Copiado!'));
     }
 
     function copiarConteudoTablet() {
         const texto = `*TABLET RECOMENDADO*
+
 Samsung Galaxy Tab A Wi-Fi 2GB Ram 32GB Octa-Core Android 9 Tela de 10.1"`;
         navigator.clipboard.writeText(texto).then(() => alert('Copiado!'));
     }
@@ -376,6 +389,7 @@ Samsung Galaxy Tab A Wi-Fi 2GB Ram 32GB Octa-Core Android 9 Tela de 10.1"`;
 
     function copiarbancossitef() {
         const texto = `*BANCOS CREDENCIADOS SITEF (PIX)*
+
 - Itaú, 
 - Sicredi, 
 - Banco do Brasil, 
@@ -399,6 +413,7 @@ Samsung Galaxy Tab A Wi-Fi 2GB Ram 32GB Octa-Core Android 9 Tela de 10.1"`;
 
     function copiarConteudoPosAndroid() {
         const texto = `*POS HOMOLOGADAS PDV ANDROID*
+
 - Stone: P2-B, L300
 - Cielo: Lio v2, Lio v3, DX8000
 - Safrapay: A8`;
@@ -414,6 +429,37 @@ Samsung Galaxy Tab A Wi-Fi 2GB Ram 32GB Octa-Core Android 9 Tela de 10.1"`;
 - Vero: Positivo L300, Sunmi P2, Gertec GPOS 700
 - PagSeguro: P2
 - Vindi: P2`;
+        navigator.clipboard.writeText(texto).then(() => alert('Copiado!'));
+    }
+
+    function copiarConteudoEtiquetadoras() {
+        const texto = `*Etiquetadoras Compatíveis*
+        
+- Argox 214 Plus OS
+- Elgin L42
+- Elgin L42 PRO
+- Zebra GC420 (Não pode ser modelo EPL)
+- Pimaco A4 (Impressoras de folha A4 para modelo de etiqueta A4 (Não realizamos instalação de impressora A4.)`;
+        navigator.clipboard.writeText(texto).then(() => alert('Copiado!'));
+    }
+
+    function copiarConteudoLeitorCodigo() {
+        const texto = `*Leitor de Código de Barras*
+
+- HoneywellMS5145
+- Leitor Código de Barras Fixo 1D Áquila S-3200 - Bematech (PARA TOTEM SELF CHECKOUT)
+- EL8600 - Leitor de Código de Barras fixo, 2D - Elgin`;
+        navigator.clipboard.writeText(texto).then(() => alert('Copiado!'));
+    }
+
+    function copiarConteudoGavetas() {
+        const texto = `*Gavetas Automáticas*
+
+Todos os modelos funcionam.
+Caso queira uma recomendação:
+
+- Bematech GD50
+- Bematech GD56`;
         navigator.clipboard.writeText(texto).then(() => alert('Copiado!'));
     }
 </script>

@@ -93,9 +93,11 @@ function carregarHeader() {
     
     // Inicializa o menu após o header ser carregado
     inicializarMenu();
-    inicializarHardwareCards();
+    // inicializarHardwareCards(); // Desabilitado - cards agora expandem automaticamente
 }
 
+// Função desabilitada - cards agora expandem automaticamente sem botão "Ver mais"
+/*
 function inicializarHardwareCards() {
     // Torna cards (.hardware-card) colapsáveis quando ultrapassarem 230px de altura
     var COLLAPSED_HEIGHT = 230;
@@ -157,6 +159,7 @@ function inicializarHardwareCards() {
         card.appendChild(btn);
     });
 }
+*/
 
 function inicializarMenu() {
     var menuToggleBtn = document.getElementById('menu-toggle-btn');
