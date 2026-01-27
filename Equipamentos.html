@@ -309,6 +309,15 @@
                     <li>- Bematech GD56</li>
                 </ul>
             </div>
+
+            <div class="hardware-card">
+                <button class="copy-btn" onclick="copiarConteudoMonitorTouchscreen()">Copiar</button>
+                <strong>Monitores Touchscreen</strong>
+                <ul>
+                    <li>Monitor, Dell, P2424HT, Touchscreen, 24"</li>
+                    <li>Monitor Touch Screen Capacitivo Multitoque 18,5 ou 23 - Lynx Wave (sempre capacitivo multitoque)</li>
+                </ul>
+            </div>
         </div>
     </section>
 
@@ -352,15 +361,15 @@
     function copiarConteudoBalanca() {
         const texto = `MODELOS RECOMENDADOS DE *BALANÇA*
 
-- Toledo Prix 3 Light
-- Toledo Prix 3 Plus
-- Toledo Prix 3 Fit
-- Toledo Prix 4
-- Toledo Prix 5
-- Toledo Prix 2187
-- Urano (Protocolo PRT-3)
-- Filizola Platina 3/4/5
-- Balanças Elgin Linha DP`;
+- Toledo Prix 3 Light (Comunicação Direta com PDV)
+- Toledo Prix 3 Plus (Comunicação Direta com PDV)
+- Toledo Prix 3 Fit (Comunicação Direta com PDV)
+- Toledo Prix 4 (Imprime etiquetas que podem ser lidas pelo leitor de código de barras no PDV)
+- Toledo Prix 5 (Imprime etiquetas que podem ser lidas pelo leitor de código de barras no PDV)
+- Toledo Prix 2187 (Imprime etiquetas que podem ser lidas pelo leitor de código de barras no PDV)
+- Urano (Protocolo PRT-3 - Comunicação Direta com PDV)
+- Filizola Platina 3/4/5 (Imprime etiquetas que podem ser lidas pelo leitor de código de barras no PDV)
+- Balanças Elgin Linha DP (Comunicação Direta com PDV)`;
         navigator.clipboard.writeText(texto).then(() => alert('Copiado!'));
     }
 
@@ -461,6 +470,15 @@ Caso queira uma recomendação:
 - Bematech GD50
 - Bematech GD56`;
         navigator.clipboard.writeText(texto).then(() => alert('Copiado!'));
+    }
+
+
+    function copiarConteudoMonitorTouchscreen() {
+        const texto = `*Monitores TouchScreen*
+
+- Monitor TouchScreen Dell P2424HT, 24"
+- Monitor TouchScreen Lynx Wave Capacitivo Multitoque 18,5" ou 23" - (sempre capacitivo multitoque)`;
+    navigator.clipboard.writeText(texto).then(() => alert('Copiado!'));
     }
 </script>
 
