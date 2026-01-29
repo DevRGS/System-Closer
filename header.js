@@ -19,6 +19,7 @@ var headerHTML = '<header class="cabeça" id="form-header">' +
         '<a href="Mytapp.html" class="header-link">MyTapp</a>' +
         '<a href="Beerpass.html" class="header-link">Beerpass</a>' +
         '<a href="Equipamentos.html" class="header-link">Equipamentos</a>' +
+        '<a href="Franquias.html" class="header-link">Franquias</a>' +
         '<a href="Formulario-sdr.html" class="header-link">SDR</a>' +
         '<a href="Formulario-closer.html" class="header-link">Formulário</a>' +
         '<a href="Matriz-objecao.html" class="header-link">Matriz Objeção</a>' +
@@ -59,6 +60,7 @@ var headerHTML = '<header class="cabeça" id="form-header">' +
                 '<h3 class="menu-column-title">IMPLEMENTAÇÃO</h3>' +
                 '<ul class="menu-links-list">' +
                     '<li><a href="Equipamentos.html" class="menu-link">Equipamentos</a></li>' +
+                    '<li><a href="Franquias.html" class="menu-link">Franquias</a></li>' +
                     '<li><a href="Formulario-sdr.html" class="menu-link">SDR</a></li>' +
                     '<li><a href="Formulario-closer.html" class="menu-link">Formulário</a></li>' +
                     '<li><a href="Matriz-objecao.html" class="menu-link">Matriz Objeção</a></li>' +
